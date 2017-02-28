@@ -112,7 +112,7 @@ examples of formatting, and Section~\ref{sec:conclusions} wraps things up.
 
 I want to refer to Section~\ref{sec:evocomp}
 and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{Aaronson:2005} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
+to cite~\cite{spector:2016} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
 
 Let's make an equation:
 \[
@@ -120,11 +120,11 @@ Let's make an equation:
 \]
 I want to refer to Section~\ref{sec:typeChangesSpecialChars}
 and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{Aaronson:2005}.
+to cite~\cite{spector:2016}.
 We can also do inline equations: $s = \sum_{i=0}^N x_i$.
 I want to refer to Section~\ref{sec:typeChangesSpecialChars}
 and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{Aaronson:2005}.\[
+to cite~\cite{spector:2016}.\[
 	s = \sum_{i=0}^N x_i
 \]
 
@@ -223,13 +223,23 @@ Test:
 
 AutoDoG works similarly to PushGP, but is run with autoconstruction as the genetic operator rather than human designed mutation and crossover operators. Its main loop ``iteratively tests the error of all individuals and then builds the next generation by selecting parents and passing them to genetic operators" \cite{spector:2016}.
 
-\todo[inline, color=yellow]{Describe more/better, summarize quotes, turn lists into paragraphs}
+\todo[inline, color=yellow]{Describe more/better, summarize long quotes, turn lists into paragraphs}
 
 \subsection{Results}
 \label{sec:results}
+The ``hard problem" we discussed earlier is "Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
+AutoDoG does not actually do better than standard PushGP on this problem.
+\begin{quotation}
+	AutoDoG does not succeed as reliably on this problem as has PushGP in some other configurations, but it does solve the problem approximately 5-10 \% of the time, producing general solutions \cite{spector:2016}
+\end{quotation}
 
+This is not surprising because AutoDoG has to learn how to evolve as well as learn how to solve the problem. That said, recent (unpublished) results look like there might be scenarios where autoconstruction may find solutions to problems we've never solved with regular PushGP, so we may soon have examples where autoconstruction is `better' in some meaningful sense \cite{Eva:autoconstruction}.
+%FIGURE OUT HOW TO CITE NIC for previous sentence (see Notes from Sources)
 
+\todo[inline]{More info about new AutoDoG results}
 
+One interesting thing to note is how AutoDoG evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. So over time, change occurs at a fairly steady rate and is not very dramatic (from generation to generation). In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
+\todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution. Maybe include DL graphs}
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
 
@@ -248,6 +258,8 @@ AutoDoG works similarly to PushGP, but is run with autoconstruction as the genet
 %  and remember to run:
 % latex bibtex latex latex
 % to resolve all references
+
+\todo[inline, color=yellow]{Add more of references to bib, update \cite{Eva:autoconstruction}, cite Nic?}
 
 \end{document}
 
