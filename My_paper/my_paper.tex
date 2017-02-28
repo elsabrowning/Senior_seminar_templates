@@ -43,90 +43,14 @@ Elsa M. Browning\\
 
 \maketitle
 \begin{abstract}
-This paper provides a sample of a \LaTeX\ document which conforms,
-somewhat loosely, to the formatting guidelines for the University of
-Minnesota, Morris, Computer Science Senior Seminar proceedings.
-It is based heavily on (and takes material directly from) a similar document 
-illustrating the format of the ACM SIG Proceedings, which we have based our
-proceedings format on.
-
-The original ACM document tried to include
-\begin{quote}
-every imaginable sort
-of ``bells and whistles", such as a subtitle, footnotes on
-title, subtitle and authors, as well as in the text, and
-every optional component (e.g. Acknowledgments, Additional
-Authors, Appendices), not to mention examples of
-equations, theorems, tables and figures.\cite{pappa:2014}
-\end{quote}
-
-We've removed many of the more esoteric tricks here because either
-they'll never be used (e.g., multiple authors) or are used \emph{very}
-rarely (e.g., appendices). Refer to the original ACM document for more
-of those fancy examples.
-% The current paper format *only* allows inline comments using the todo
-% macro. That's kind of a bummer, and it would be neat if someone figured
-% out how to change the acmconf style to allow this. I suspect it isn't *hard*
-% but there are quite a few details that have to be sorted out in synchrony.
-\todo[inline]{Needs more work}
+	 VERY rough draft of abstract: We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+	
 \end{abstract}
 
-\keywords{ACM proceedings, \LaTeX, text tagging}
+\keywords{Evolutionary Computation, Genetic Programming, Hyper Heuristics, Autoconstruction}
 
 \section{Introduction}
 \label{sec:introduction}
-
-The \textit{proceedings} are the records of a conference, and conference
-editors like ACM seek to give their conference by-products a uniform,
-high-quality appearance. We also would like our proceedings to look highly
-professional, so we're borrowing heavily from the ACM formatting guidelines.
-These include some
-rigid requirements for the format of the proceedings documents: there
-is a specified format (balanced  double columns), a specified
-set of fonts (Arial or Helvetica and Times Roman) in
-certain specified sizes (for instance, 9 point for body copy),
-a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
-the page, specified size of margins (2.54cm [1"] top and
-bottom and 1.9cm [.75"] left and right; specified column width
-(8.45cm [3.33"]) and gutter size (.083cm [.33"]).
-
-\todo[inline, color=green]{I really like this section.}
-
-The good news is, with only a handful of manual
-settings,\footnote{One of these, the \texttt{\textbackslash alignauthor} command, 
-you have
-already used; another, \texttt{\textbackslash balancecolumns} will
-be used in your very last run of \LaTeX\ to ensure
-balanced column heights on the last page.} the \LaTeX\ document
-class file handles all of this for you.
-
-The remainder of this document is concerned with showing, in
-the context of an ``actual'' document, the \LaTeX\ commands
-specifically available for denoting the structure of a
-proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands. Section~\ref{sec:body} introduces the main
-examples of formatting, and Section~\ref{sec:conclusions} wraps things up. 
-
-\subsection{My nifty subsection}
-\label{sec:mysubsection}
-
-I want to refer to Section~\ref{sec:evocomp}
-and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{spector:2016} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
-
-Let's make an equation:
-\[
-	\textrm{area} = \pi r^2
-\]
-I want to refer to Section~\ref{sec:typeChangesSpecialChars}
-and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{spector:2016}.
-We can also do inline equations: $s = \sum_{i=0}^N x_i$.
-I want to refer to Section~\ref{sec:typeChangesSpecialChars}
-and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{spector:2016}.\[
-	s = \sum_{i=0}^N x_i
-\]
 
 \section{Background}
 \label{sec:background}
@@ -160,7 +84,7 @@ Traditionally, genetic programming \textit{solutions} to problems evolve, but al
 	In autoconstructive evolution the methods for variation are encoded in the same individuals that are being evolved as solutions to the target problem.
 \end{quotation}
 \todo[inline]{I say "variation" a million times... sorry guys}
-Here,``individuals" refers to programs. This means that variation methods are part of the actual program code so that the methods for evolution are evolving as well. \todo[inline]{Not sure if I should describe quote here--I say this in different ways earlier in the section}
+Here,``individuals" refers to programs. This means that variation methods are part of the actual program code so that the methods for evolution are evolving as well. \todo[inline]{is this helpful?}
 
 Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. This new system called Autoconstructive Diversification of Genomes (AutoDoG) has actually managed to solve a few hard problems \cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before. \cite{Eva:autoconstruction}.
 
@@ -265,6 +189,93 @@ One interesting thing to note is how AutoDoG evolves. In standard PushGP, one ca
 
 
 
+
+
+
+
+
+
+
+
+
+This paper provides a sample of a \LaTeX\ document which conforms,
+somewhat loosely, to the formatting guidelines for the University of
+Minnesota, Morris, Computer Science Senior Seminar proceedings.
+It is based heavily on (and takes material directly from) a similar document 
+illustrating the format of the ACM SIG Proceedings, which we have based our
+proceedings format on.
+
+The original ACM document tried to include
+\begin{quote}
+	every imaginable sort
+	of ``bells and whistles", such as a subtitle, footnotes on
+	title, subtitle and authors, as well as in the text, and
+	every optional component (e.g. Acknowledgments, Additional
+	Authors, Appendices), not to mention examples of
+	equations, theorems, tables and figures.\cite{pappa:2014}
+\end{quote}
+
+We've removed many of the more esoteric tricks here because either
+they'll never be used (e.g., multiple authors) or are used \emph{very}
+rarely (e.g., appendices). Refer to the original ACM document for more
+of those fancy examples.
+% The current paper format *only* allows inline comments using the todo
+% macro. That's kind of a bummer, and it would be neat if someone figured
+% out how to change the acmconf style to allow this. I suspect it isn't *hard*
+% but there are quite a few details that have to be sorted out in synchrony.
+\todo[inline]{Needs more work}
+
+The \textit{proceedings} are the records of a conference, and conference
+editors like ACM seek to give their conference by-products a uniform,
+high-quality appearance. We also would like our proceedings to look highly
+professional, so we're borrowing heavily from the ACM formatting guidelines.
+These include some
+rigid requirements for the format of the proceedings documents: there
+is a specified format (balanced  double columns), a specified
+set of fonts (Arial or Helvetica and Times Roman) in
+certain specified sizes (for instance, 9 point for body copy),
+a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
+the page, specified size of margins (2.54cm [1"] top and
+bottom and 1.9cm [.75"] left and right; specified column width
+(8.45cm [3.33"]) and gutter size (.083cm [.33"]).
+
+\todo[inline, color=green]{I really like this section.}
+
+The good news is, with only a handful of manual
+settings,\footnote{One of these, the \texttt{\textbackslash alignauthor} command, 
+	you have
+	already used; another, \texttt{\textbackslash balancecolumns} will
+	be used in your very last run of \LaTeX\ to ensure
+	balanced column heights on the last page.} the \LaTeX\ document
+class file handles all of this for you.
+
+The remainder of this document is concerned with showing, in
+the context of an ``actual'' document, the \LaTeX\ commands
+specifically available for denoting the structure of a
+proceedings paper, rather than with giving rigorous descriptions
+or explanations of such commands. Section~\ref{sec:body} introduces the main
+examples of formatting, and Section~\ref{sec:conclusions} wraps things up. 
+
+\subsection{My nifty subsection}
+\label{sec:mysubsection}
+
+I want to refer to Section~\ref{sec:evocomp}
+and Figure~\ref{fig:twoColumnFigure}. It would also be nice
+to cite~\cite{spector:2016} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
+
+Let's make an equation:
+\[
+\textrm{area} = \pi r^2
+\]
+I want to refer to Section~\ref{sec:typeChangesSpecialChars}
+and Figure~\ref{fig:twoColumnFigure}. It would also be nice
+to cite~\cite{spector:2016}.
+We can also do inline equations: $s = \sum_{i=0}^N x_i$.
+I want to refer to Section~\ref{sec:typeChangesSpecialChars}
+and Figure~\ref{fig:twoColumnFigure}. It would also be nice
+to cite~\cite{spector:2016}.\[
+s = \sum_{i=0}^N x_i
+\]
 
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
