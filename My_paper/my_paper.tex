@@ -155,14 +155,80 @@ to cite~\cite{Aaronson:2005}.\[
 \section{Autoconstruction}
 \label{sec:ac}
 
-\subsection{Push and Plush}
+Traditionally, genetic programming \textit{solutions} to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well. Variation methods are things like mutation and crossover--things that cause \textit{variation} in the population (see Section \ref{sec:evocomp} and Section \ref{sec:GP} for more details on how these work). Spector et al. generalizes how this is happening:
+\begin{quotation}
+	In autoconstructive evolution the methods for variation are encoded in the same individuals that are being evolved as solutions to the target problem.
+\end{quotation}
+\todo[inline]{I say "variation" a million times... sorry guys}
+Here,``individuals" refers to programs. This means that variation methods are part of the actual program code so that the methods for evolution are evolving as well. \todo[inline]{Not sure if I should describe quote here--I say this in different ways earlier in the section}
+
+Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. This new system called Autoconstructive Diversification of Genomes (AutoDoG) has actually managed to solve a few hard problems \cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before. \cite{Eva:autoconstruction}.
+
+In Section \ref{sec:push}, we will describe the format in which AutoDoG is expressed. In Section \ref{sec:autodog} we will describe how AutoDoG works. Finally, in Section \ref{sec:results} we will go over how well AutoDoG performs compared to other systems.
+
+\subsection{Push, Plush, and PushGP}
 \label{sec:push}
+
+Push is a programming language developed for program evolution \cite{spector:2016}. It was designed to be a better language in which to express evolving programs. Autoconstruction was actually one of the driving forces behind the original design. Push can briefly be described as
+
+\begin{quotation}
+	a stack based language with a separate stack for each data type [...] Programs are executed by putting them on \texttt{exec} stack, from which the interpreter continuously takes and processes items \cite{spector:2016}.
+\end{quotation}
+\todo[inline]{I will hopefully have described enough about stack based languages in Section \ref{sec:sgp} that I won't have to describe much more here}
+
+%When ELSA LOOK AT THIS COMMENT the interpreter sees literals (e.g. integers, strings), it pushes them onto their appropriate stacks and waits for instructions. When the interpreter encounters instructions, it executes them by taking arguments from appropriate stacks and pushing any results onto stacks of the appropriate types \cite{spector:2016}.
+
+\begin{itemize}
+	\item Talk about: how Push works (maybe bullets for now)
+	\item how Push = better for autoconstruction things
+	\item Plush
+	\item linear genomes
+	\item how Plush/linear genomes are beneficial to autoconstruciton
+	\item PushGP--a "reasonably standard generational genetic programming system"
+\end{itemize}
+
+\todo[inline, color=yellow]{Turn list into paragraphs}
 
 \subsection{AutoDoG}
 \label{sec:autodog}
 
+AutoDoG is unique in that is can solve some hard problems. We are going to discuss some of its features, however
+\begin{quotation}
+	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}
+\end{quotation}
+
+One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To maintain diversity, AutoDoG uses Lexicase Selection. In Lexicase selection,
+\begin{itemize}
+	\item Each parent selection event starts with pool of entire population
+	\item Pool filtered based on performance of individual fitness cases, considered in random order one at a time.
+	\item In each case, retains only individuals best on that case.
+\end{itemize}
+
+Its name comes from the way it filters the population using a kind of ``lexigraphic ordering" of cases \cite{spector:2016}.
+\begin{quotation}
+	Lexicase selection performs significantly better than the standard approach and than implicit fitness sharing, allowing the solution of more problems, in fewer generations, on a benchmark suite of problems taken from introductory programming textbooks \cite{spector:2016}.
+\end{quotation}
+\todo[inline]{will probably paraphrase previous quote since it's so long}
+
+Most autoconstruction systems have some form of the``no cloning rule" which prevents an exact copy of a program from moving on to the next generation, and AutoDoG has a form of this as well \cite{spector:2016}. AutoDoG broadens this to ``require that offspring are only allowed to enter the population if they pass a more stringent diversification test" \cite{spector:2016}.
+Test:
+\begin{itemize}
+	\item make individual for next generation
+	\item individual takes itself as mate and makes temp children.
+	\item if temp children differ enough from individual and each other, individual enters next generation's population
+	\item else, generate new random individual and repeat previous steps
+	\item if random individual fails, generate individual with empty genome and add it to next generation
+	\item discard any children after test
+\end{itemize}
+
+AutoDoG works similarly to PushGP, but is run with autoconstruction as the genetic operator rather than human designed mutation and crossover operators. Its main loop ``iteratively tests the error of all individuals and then builds the next generation by selecting parents and passing them to genetic operators" \cite{spector:2016}.
+
+\todo[inline, color=yellow]{Describe more/better, summarize quotes, turn lists into paragraphs}
+
 \subsection{Results}
 \label{sec:results}
+
+
 
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
