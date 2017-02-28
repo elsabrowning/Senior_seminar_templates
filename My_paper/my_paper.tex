@@ -57,7 +57,7 @@ of ``bells and whistles", such as a subtitle, footnotes on
 title, subtitle and authors, as well as in the text, and
 every optional component (e.g. Acknowledgments, Additional
 Authors, Appendices), not to mention examples of
-equations, theorems, tables and figures.
+equations, theorems, tables and figures.\cite{pappa:2014}
 \end{quote}
 
 We've removed many of the more esoteric tricks here because either
@@ -110,9 +110,9 @@ examples of formatting, and Section~\ref{sec:conclusions} wraps things up.
 \subsection{My nifty subsection}
 \label{sec:mysubsection}
 
-I want to refer to Section~\ref{sec:typeChangesSpecialChars}
+I want to refer to Section~\ref{sec:evocomp}
 and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{Aaronson:2005} and~\cite{Browning:2017} and~\cite{Eva:autoconstruction}.
+to cite~\cite{Aaronson:2005} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
 
 Let's make an equation:
 \[
@@ -128,8 +128,65 @@ to cite~\cite{Aaronson:2005}.\[
 	s = \sum_{i=0}^N x_i
 \]
 
-\section{The {\secit Body} of The Paper}
-\label{sec:body}
+\section{Background}
+\label{sec:background}
+
+\subsection{Evolutionary Computation}
+\label{sec:evocomp}
+
+\subsection{Genetic Programming}
+\label{sec:GP}
+
+\subsection{Hyper Heuristics}
+\label{sec:HH}
+
+\subsection{History of AAD}
+\label{sec:history}
+
+\section{Genetic Programming Variants}
+\label{sec:gpvariants}
+
+\subsection{Tree-based Genetic Programming}
+\label{sec:tgp}
+
+\subsection{Stack-based Genetic Programming}
+\label{sec:sgp}
+
+\section{Autoconstruction}
+\label{sec:ac}
+
+\subsection{Push and Plush}
+\label{sec:push}
+
+\subsection{AutoDoG}
+\label{sec:autodog}
+
+\subsection{Results}
+\label{sec:results}
+
+\section{Conclusions and Future Work}
+\label{sec:conclusion}
+
+\section{Acknowledgments}
+\label{sec:acknowledgments}
+
+
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+% my_paper.bib is the name of the BibTex file containing the
+% bibliography entries. Note that you *don't* include the .bib ending here.
+\bibliography{my_paper}  
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+
+\end{document}
+
+
+
 
 Typically, the body of a paper is organized
 into a hierarchical structure, with numbered or unnumbered
@@ -137,10 +194,10 @@ headings for sections, subsections, sub-subsections, and even
 smaller sections.  The command \texttt{\textbackslash section} that
 precedes this paragraph is part of such a
 hierarchy.\footnote{This is the second footnote.  It
-starts a series of three footnotes that add nothing
-informational, but just give an idea of how footnotes work
-and look. It is a wordy one, just so you see
-how a longish one plays out.} \LaTeX\ handles the numbering
+	starts a series of three footnotes that add nothing
+	informational, but just give an idea of how footnotes work
+	and look. It is a wordy one, just so you see
+	how a longish one plays out.} \LaTeX\ handles the numbering
 and placement of these headings for you, when you use
 the appropriate heading commands around the titles
 of the headings.  If you want a sub-subsection or
@@ -154,8 +211,6 @@ the \textbf{document} environment, you can indicate the
 start of a new paragraph with a blank line in your
 input file; that is why this sentence forms a separate paragraph.
 
-\subsection{Type Changes and {\subsecit Special} Characters}
-\label{sec:typeChangesSpecialChars}
 
 We have already seen several typeface changes in this sample.  You
 can indicate italicized words or phrases in your text with
@@ -172,8 +227,8 @@ have to indicate typestyle changes when such changes are
 part of the \textit{structural} elements of your
 article; for instance, the heading of this subsection will
 be in a sans serif\footnote{A third footnote, here.
-Let's make this a rather short one to
-see how it looks.} typeface, but that is handled by the
+	Let's make this a rather short one to
+	see how it looks.} typeface, but that is handled by the
 document class file. Take care with the use
 of\footnote{A fourth, and last, footnote.}
 the curly braces in typeface changes; they mark
@@ -184,7 +239,7 @@ You can use whatever symbols, accented characters, or
 non-English characters you need anywhere in your document;
 you can find a complete list of what is
 available in the \textit{\LaTeX\
-User's Guide}~\cite{Lamport:LaTeX}.
+	User's Guide}~\cite{Lamport:LaTeX}.
 
 \subsection{Math Equations}
 \label{sec:mathEquations}
@@ -231,13 +286,13 @@ the \textbf{displaymath}
 environment.  Now, we'll enter an unnumbered equation:
 
 \begin{displaymath}
-	\sum_{i=0}^{\infty} x + 1
+\sum_{i=0}^{\infty} x + 1
 \end{displaymath}
 
 and follow it with a numbered equation (Equation~\ref{eq:summation}):
 
 \begin{equation}
-	\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
+\sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
 \label{eq:summation}
 \end{equation}
 
@@ -259,8 +314,8 @@ n_{x-y} &= \prod_{i = 1}^k b_i
 \end{align*}
 
 \begin{align*}
- f(x) &= (x+a)(x+b) \\
- &= x^2 + (a+b)x + ab
+f(x) &= (x+a)(x+b) \\
+&= x^2 + (a+b)x + ab
 \end{align*}
 
 \subsection{Figures}
@@ -279,10 +334,10 @@ Figure~\ref{fig:singleColumnFigure}.  More
 details on each of these is found in the \textit{Author's Guide}.
 
 \begin{figure}
-\centering
-\psfig{file=sample_graph.pdf,width =3in}
-\caption{A sample graph just spanning one column.}
-\label{fig:singleColumnFigure}
+	\centering
+	\psfig{file=sample_graph.pdf,width =3in}
+	\caption{A sample graph just spanning one column.}
+	\label{fig:singleColumnFigure}
 \end{figure}
 
 
@@ -295,17 +350,17 @@ And don't forget to end the environment with
 \texttt{figure*}, not \texttt{figure}!
 
 \begin{figure*}
-\centering
-\psfig{file=sample_graph.pdf,width =5.3in}
-\caption{A sample graph that needs to span two columns of text.}
-\label{fig:twoColumnFigure}
+	\centering
+	\psfig{file=sample_graph.pdf,width =5.3in}
+	\caption{A sample graph that needs to span two columns of text.}
+	\label{fig:twoColumnFigure}
 \end{figure*}
 
 It's easiest and you tend to get the best quality if your figure uses vector graphics
 in PDF format. You can include other formats such as PNG, but they will usually
 not look nearly as professional, especially when printed on high resolution printers.
 \emph{Be very wary of screen captures from other papers. They tend to look pixelated
-and amateurish even at high resolutions.}
+	and amateurish even at high resolutions.}
 
 \subsection{Tables}
 \label{sec:tables}
@@ -328,16 +383,16 @@ compare the placement of the table here with the table in the
 PDF output running \LaTeX\ on this document.
 
 \begin{table}[t]
-\centering
-\caption{Frequency of Special Characters}
-\label{tab:frequencyOfSpecialChars}
-\begin{tabular}{c|c|l}
-Non-English or Math & Frequency & Comments\\ \hline
-\O & 1 in 1,000 & For Swedish names\\
-$\pi$ & 1 in 5 & Common in math\\
-\$ & 4 in 5 & Used in business\\
-$\Psi^2_1$ & 1 in 40,000 & Unexplained usage\\
-\end{tabular}
+	\centering
+	\caption{Frequency of Special Characters}
+	\label{tab:frequencyOfSpecialChars}
+	\begin{tabular}{c|c|l}
+		Non-English or Math & Frequency & Comments\\ \hline
+		\O & 1 in 1,000 & For Swedish names\\
+		$\pi$ & 1 in 5 & Common in math\\
+		\$ & 4 in 5 & Used in business\\
+		$\Psi^2_1$ & 1 in 40,000 & Unexplained usage\\
+	\end{tabular}
 \end{table}
 
 To set a wider table, which takes up the whole width of
@@ -354,16 +409,16 @@ output of this document.
 
 
 \begin{table*}[t]
-\centering
-\caption{Some Typical Commands}
-\label{tab:typicalCommands}
-\begin{tabular}{ccl}
-Command & A Number & Comments \\ \hline
-\texttt{\textbackslash alignauthor}     & 100 & Author alignment\\
-\texttt{\textbackslash numberofauthors} & 200 & Author enumeration\\
-\texttt{\textbackslash table}           & 300 & For tables\\
-\texttt{\textbackslash table*}          & 400 & For wider tables\\ 
-\end{tabular}
+	\centering
+	\caption{Some Typical Commands}
+	\label{tab:typicalCommands}
+	\begin{tabular}{ccl}
+		Command & A Number & Comments \\ \hline
+		\texttt{\textbackslash alignauthor}     & 100 & Author alignment\\
+		\texttt{\textbackslash numberofauthors} & 200 & Author enumeration\\
+		\texttt{\textbackslash table}           & 300 & For tables\\
+		\texttt{\textbackslash table*}          & 400 & For wider tables\\ 
+	\end{tabular}
 \end{table*}
 % end the environment with {table*}, NOTE not {table}!
 
@@ -392,7 +447,7 @@ The details of the construction of the \texttt{.bib} file
 are beyond the scope of this sample document, but more
 information can be found in the \textit{Author's Guide},
 and exhaustive details in the \textit{\LaTeX\ User's
-Guide}.
+	Guide}.
 
 This article shows only the plainest form
 of the citation command, using \texttt{\textbackslash cite},
@@ -420,25 +475,25 @@ the \texttt{\textbackslash newtheorem} command:
 \newtheorem{theorem}{Theorem}
 
 \begin{theorem}
-Let $f$ be continuous on $[a,b]$.  If $G$ is
-an antiderivative for $f$ on $[a,b]$, then
-\begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
-\label{thm:integration}
+	Let $f$ be continuous on $[a,b]$.  If $G$ is
+	an antiderivative for $f$ on $[a,b]$, then
+	\begin{displaymath}\int^b_af(t)dt = G(b) - G(a).\end{displaymath}
+	\label{thm:integration}
 \end{theorem}
 
 The other uses the \textbf{definition} environment, created
 by the \texttt{\textbackslash newdef} command:
 \newdef{definition}{Definition}
 \begin{definition}
-If $z$ is irrational, then by $e^z$ we mean the
-unique number which has
-logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
+	If $z$ is irrational, then by $e^z$ we mean the
+	unique number which has
+	logarithm $z$: \begin{displaymath}{\log e^z = z}\end{displaymath}
 \end{definition}
 
 Two lists of constructs that use one of these
 forms is given in the
 \textit{Author's  Guidelines}.
- 
+
 There is one other similar construct environment, which is
 already set up
 for you; i.e. you must \textit{not} use
@@ -446,21 +501,21 @@ a \texttt{\textbackslash newdef} command to
 create it: the \textbf{proof} environment.  Here
 is a example of its use:
 \begin{proof}
-Suppose on the contrary there exists a real number $L$ such that
-\begin{displaymath}
-\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-\end{displaymath}
-Then
-\begin{align*}
-l &= \lim_{x\rightarrow c} f(x) \\
-  &= \lim_{x\rightarrow c}
-\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ] \\
-  &= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
-\frac{f(x)}{g(x)}  \\
-  &= 0\cdot L  \\
-  &= 0,
-\end{align*}
-which contradicts our assumption that $l\neq 0$.
+	Suppose on the contrary there exists a real number $L$ such that
+	\begin{displaymath}
+	\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
+	\end{displaymath}
+	Then
+	\begin{align*}
+	l &= \lim_{x\rightarrow c} f(x) \\
+	&= \lim_{x\rightarrow c}
+	\left[ g{x} \cdot \frac{f(x)}{g(x)} \right ] \\
+	&= \lim_{x\rightarrow c} g(x) \cdot \lim_{x\rightarrow c}
+	\frac{f(x)}{g(x)}  \\
+	&= 0\cdot L  \\
+	&= 0,
+	\end{align*}
+	which contradicts our assumption that $l\neq 0$.
 \end{proof}
 
 Complete rules about using these environments and using the
@@ -488,9 +543,6 @@ to other forms -- e.g. HTML. If you inadvertently omit
 some or all of the \texttt{\textbackslash def}s recompilation will
 be, to say the least, problematic.
 
-\section{Conclusions}
-\label{sec:conclusions}
-
 This paragraph will end the body of this sample document.
 Remember that you might still have Acknowledgments or
 Appendices; brief samples of these
@@ -501,8 +553,6 @@ this paper are to articles which have nothing to
 do with the present subject and are used as
 examples only.
 
-\section*{Acknowledgments}
-\label{sec:acknowledgments}
 
 This section is optional; it is a location for you
 to acknowledge grants, funding, editing assistance and
@@ -520,17 +570,3 @@ In the present case, for example, the
 authors would like to thank Gerald Murray of ACM for
 his help in codifying this \textit{Author's Guide}
 and the \textbf{.cls} and \textbf{.tex} files that it describes.
-
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
-% my_paper.bib is the name of the BibTex file containing the
-% bibliography entries. Note that you *don't* include the .bib ending here.
-\bibliography{my_paper}  
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-
-\end{document}
