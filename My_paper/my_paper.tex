@@ -43,7 +43,7 @@ Elsa M. Browning\\
 
 \maketitle
 \begin{abstract}
-	 VERY rough draft of abstract: We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+	 We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
 	
 \end{abstract}
 
@@ -79,47 +79,47 @@ Elsa M. Browning\\
 \section{Autoconstruction}
 \label{sec:ac}
 
-Traditionally, genetic programming \textit{solutions} to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well. Variation methods are things like mutation and crossover--things that cause \textit{variation} in the population (see Section \ref{sec:evocomp} and Section \ref{sec:GP} for more details on how these work). Spector et al. generalizes how this is happening:
+Traditionally, genetic programming solutions to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well. Spector et al. generalizes how this is happening:
 \begin{quotation}
-	In autoconstructive evolution the methods for variation are encoded in the same individuals that are being evolved as solutions to the target problem.
+	In autoconstructive evolution the methods for variation are encoded in the same individuals that are being evolved as solutions to the target problem \cite{spector:2016}.
 \end{quotation}
-\todo[inline]{I say "variation" a million times... sorry guys}
-Here,``individuals" refers to programs. This means that variation methods are part of the actual program code so that the methods for evolution are evolving as well. \todo[inline]{is this helpful?}
+Here,``individuals" refers to programs. This means that the methods for evolution are evolving, too. These are things like mutation and crossover--things that cause variation in the population (see Section \ref{sec:evocomp} and Section \ref{sec:GP} for more details on how these work).
 
-Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. This new system called Autoconstructive Diversification of Genomes (AutoDoG) has actually managed to solve a few hard problems \cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before. \cite{Eva:autoconstruction}.
+Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. This new system called Autoconstructive Diversification of Genomes (AutoDoG) has managed to solve a hard problem: "Replace Space with Newline" \cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before \cite{Eva:autoconstruction}.
 
 In Section \ref{sec:push}, we will describe the format in which AutoDoG is expressed. In Section \ref{sec:autodog} we will describe how AutoDoG works. Finally, in Section \ref{sec:results} we will go over how well AutoDoG performs compared to other systems.
 
-\subsection{Push, Plush, and PushGP}
+\subsection{Push and Plush}
 \label{sec:push}
 
 Push is a programming language developed for program evolution \cite{spector:2016}. It was designed to be a better language in which to express evolving programs. Autoconstruction was actually one of the driving forces behind the original design. Push can briefly be described as
 
 \begin{quotation}
-	a stack based language with a separate stack for each data type [...] Programs are executed by putting them on \texttt{exec} stack, from which the interpreter continuously takes and processes items \cite{spector:2016}.
+	a stack based language with a separate stack for each data type [...] Programs are executed by putting them on the \texttt{exec} stack, from which the interpreter continuously takes and processes items \cite{spector:2016}.
 \end{quotation}
 \todo[inline]{I will hopefully have described enough about stack based languages in Section \ref{sec:sgp} that I won't have to describe much more here}
 
 %When ELSA LOOK AT THIS COMMENT the interpreter sees literals (e.g. integers, strings), it pushes them onto their appropriate stacks and waits for instructions. When the interpreter encounters instructions, it executes them by taking arguments from appropriate stacks and pushing any results onto stacks of the appropriate types \cite{spector:2016}.
 
 \begin{itemize}
-	\item Talk about: how Push works (maybe bullets for now)
+	\item Talk about:
 	\item how Push = better for autoconstruction things
 	\item Plush
 	\item linear genomes
 	\item how Plush/linear genomes are beneficial to autoconstruciton
 	\item PushGP--a "reasonably standard generational genetic programming system"
+	\item PUT PUSHGP IN WITH RESULTS STUFF... BRIEFLY MENTION WHAT IT IS (and that it's not autoconstruciton)
 \end{itemize}
 
 \todo[inline, color=yellow]{Turn list into paragraphs}
 
 \subsection{AutoDoG}
 \label{sec:autodog}
-
-AutoDoG is unique in that is can solve some hard problems. We are going to discuss some of its features, however
+AutoDoG is unique in that is can solve some hard problems. \todo[inline]{stop saying this--you say this in like 4 places... so repetitive} We are going to discuss some of its features, however
 \begin{quotation}
-	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}
+	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}.
 \end{quotation}
+This is because they have not yet studied enough features of AutoDoG to know why it works.
 
 One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To maintain diversity, AutoDoG uses Lexicase Selection. In Lexicase selection,
 \begin{itemize}
@@ -151,18 +151,18 @@ AutoDoG works similarly to PushGP, but is run with autoconstruction as the genet
 
 \subsection{Results}
 \label{sec:results}
-The ``hard problem" we discussed earlier is "Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
+The ``hard problem" we discussed earlier is``Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
 AutoDoG does not actually do better than standard PushGP on this problem.
 \begin{quotation}
 	AutoDoG does not succeed as reliably on this problem as has PushGP in some other configurations, but it does solve the problem approximately 5-10 \% of the time, producing general solutions \cite{spector:2016}
 \end{quotation}
 
 This is not surprising because AutoDoG has to learn how to evolve as well as learn how to solve the problem. That said, recent (unpublished) results look like there might be scenarios where autoconstruction may find solutions to problems we've never solved with regular PushGP, so we may soon have examples where autoconstruction is `better' in some meaningful sense \cite{Eva:autoconstruction}.
-%FIGURE OUT HOW TO CITE NIC for previous sentence (see Notes from Sources)
+\todo[inline]{FIGURE OUT HOW TO CITE NIC for previous sentence (see Notes from Sources) and/or figure out how to rephrase}
 
 \todo[inline]{More info about new AutoDoG results}
 
-One interesting thing to note is how AutoDoG evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. So over time, change occurs at a fairly steady rate and is not very dramatic (from generation to generation). In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
+One interesting thing to note is how AutoDoG evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. Over time, change occurs at a fairly steady rate and is not very dramatic (from one generation to the next). In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
 \todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution. Maybe include DL graphs}
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
