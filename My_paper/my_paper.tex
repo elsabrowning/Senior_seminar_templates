@@ -62,6 +62,9 @@ END NOTES
 
 Traditionally, genetic programming solutions to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well.
 
+In Section \ref{sec:push}, we describe Push, a stack-based programming language, and Plush, the linear genome format of Push, which AutoDoG uses to make its programs.\todo[inline]{still phrasing this poorly?} In Section \ref{sec:autodog} we describe how AutoDoG works. Finally, in Section \ref{sec:results} we discuss the success of AutoDoG.
+\todo[inline, color=yellow]{Not sure how much ``roadmap" I will add}
+
 \section{Background}
 \label{sec:background}
 
@@ -88,21 +91,21 @@ Traditionally, genetic programming solutions to problems evolve, but almost ever
 
 \section{Autoconstruction}
 \label{sec:ac}
-In genetic programming hyper heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In GPHH, only the potential solutions are evolving~--~everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction, evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as the programs evolve, the variation methods evolve (see sections~\ref{sec:evocomp}~and~\ref{sec:GP} for methods of variation).
+In genetic programming hyper heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In GPHH, only the potential solutions are evolving~--~everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction, evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as the programs evolve, the variation methods evolve (see sections~\ref{sec:evocomp}~and~\ref{sec:GP} for methods of variation, see section~\ref{sec:push} for how this works).
 
 Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: ``Replace Space with Newline"~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{Eva:autoconstruction}.
+\todo[inline, color=yellow]{Not sure how much of this is introduction stuff}
 
-In Section \ref{sec:push}, we will describe Push, a stack-based programming language, and Plush, the linear genome format of Push, which AutoDoG uses to make its programs.\todo[inline]{still be phrasing this poorly?} In Section \ref{sec:autodog} we will describe how AutoDoG works. Finally, in Section \ref{sec:results} we will go over how well AutoDoG performs compared to other systems.
-
-\todo[inline, color=purple]{LEFT OFF AT 4:25min in video/this place in paper!!!!!}
 \subsection{Push and Plush}
 \label{sec:push}
 
-Push is a programming language developed for program evolution \cite{spector:2016}. It was designed to be a better language in which to express evolving programs. Autoconstruction was actually one of the driving forces behind the original design. Push can briefly be described as
+Push is a stack-based programming language developed for program evolution \cite{spector:2016}. Autoconstruction was actually one of the driving forces behind the original design. 
+\todo[inline, color=purple]{LEFT OFF AT 7:00 min in video/this place in paper!!!!!}
 
 \begin{quotation}
 	a stack based language with a separate stack for each data type [...] Programs are executed by putting them on the \texttt{exec} stack, from which the interpreter continuously takes and processes items \cite{spector:2016}.
 \end{quotation}
+
 \todo[inline]{I will hopefully have described enough about stack based languages in Section \ref{sec:sgp} that I won't have to describe much more here}
 
 %When ELSA LOOK AT THIS COMMENT the interpreter sees literals (e.g. integers, strings), it pushes them onto their appropriate stacks and waits for instructions. When the interpreter encounters instructions, it executes them by taking arguments from appropriate stacks and pushing any results onto stacks of the appropriate types \cite{spector:2016}.
