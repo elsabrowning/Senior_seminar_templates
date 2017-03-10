@@ -21,7 +21,7 @@
 
 % --- Author Metadata here ---
 %%% REMEMBER TO CHANGE THE SEMESTER AND YEAR AS NEEDED
-\conferenceinfo{UMM CSci Senior Seminar Conference, December 2015}{Morris, MN}
+\conferenceinfo{UMM CSci Senior Seminar Conference, April 2017}{Morris, MN}
 
 \title{Automating Algorithm Design through Genetic Programming Hyper Heuristics}
 
@@ -43,7 +43,8 @@ Elsa M. Browning\\
 
 \maketitle
 \begin{abstract}
-	 We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+	 \todo[inline, color=yellow]{actually write an abstract}We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+	 \todo[inline, color=green]{Citing stuff to see what it looks like~\cite{lee:2001}~and~\cite{pappa:2014}}
 	
 \end{abstract}
 
@@ -51,14 +52,7 @@ Elsa M. Browning\\
 
 \section{Introduction}
 \label{sec:introduction}
-NOTES:
-Motivate why we care about AAD.
-AAD is old idea.
-Hyper Heuristic (HH) optimization approached it
-Focusing on the Genetic programming (GP) aspect.
-The type of GP variant may affect success of using GP as a HH (i. e., the success of using GP to discover heuristic fun).
-Current research being done with GPHH with hope of AAD (specifically generation).
-END NOTES
+\todo[inline, color=yellow]{Mostly notes right now}
 
 Traditionally, genetic programming solutions to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well.
 
@@ -93,26 +87,19 @@ In Section \ref{sec:push}, we describe Push, a stack-based programming language,
 \label{sec:ac}
 In genetic programming hyper heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In GPHH, only the potential solutions are evolving~--~everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction, evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as the programs evolve, the variation methods evolve (see sections~\ref{sec:evocomp}~and~\ref{sec:GP} for methods of variation, see section~\ref{sec:push} for how this works).
 
-Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: ``Replace Space with Newline"~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{Eva:autoconstruction}.
+Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: ``Replace Space with Newline"~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{eva:2017}.
 \todo[inline, color=yellow]{Not sure how much of this is introduction stuff}
 
 \subsection{Push and Plush}
 \label{sec:push}
 
-Push is a stack-based programming language developed for program evolution \cite{spector:2016}. Autoconstruction was actually one of the driving forces behind the original design. 
-\todo[inline, color=purple]{LEFT OFF AT 7:00 min in video/this place in paper!!!!!}
+Push is a stack-based programming language with a separate stack for each data type. It was developed for program evolution and autoconstruction was one of the driving forces behind the original design~\cite{spector:2016}. Push programs are strings of instructions, constants, and parentheses with only one syntax requirement: the parentheses must be balanced~\cite{lee:2001}.
+\todo[inline]{I am not sure that I should mention prev sentence, because I may want to give examples if this is mentioned...} Instructions are executed by putting them on the \texttt{exec} stack. If the necessary arguments are not available for the instruction to be executed, the instruction is skipped. For example, if a program says \texttt{(INTEGER.+)}, this means pop the first two integers off the top of the \texttt{INTEGER} stack, add them together, and push the result back on to the stack. If there are not enough integers on the stack or if the stack is empty, the instruction is skipped.
 
-\begin{quotation}
-	a stack based language with a separate stack for each data type [...] Programs are executed by putting them on the \texttt{exec} stack, from which the interpreter continuously takes and processes items \cite{spector:2016}.
-\end{quotation}
-
-\todo[inline]{I will hopefully have described enough about stack based languages in Section \ref{sec:sgp} that I won't have to describe much more here}
-
-%When ELSA LOOK AT THIS COMMENT the interpreter sees literals (e.g. integers, strings), it pushes them onto their appropriate stacks and waits for instructions. When the interpreter encounters instructions, it executes them by taking arguments from appropriate stacks and pushing any results onto stacks of the appropriate types \cite{spector:2016}.
+\todo[inline, color=purple]{left off 7:10 in video, here (ish) in paper. Go over linear genome/Plush next}
 
 \begin{itemize}
 	\item Talk about:
-	\item how Push = better for autoconstruction things
 	\item Plush
 	\item linear genomes
 	\item how Plush/linear genomes are beneficial to autoconstruciton
@@ -166,8 +153,7 @@ AutoDoG does not actually do better than standard PushGP on this problem.
 	AutoDoG does not succeed as reliably on this problem as has PushGP in some other configurations, but it does solve the problem approximately 5-10 \% of the time, producing general solutions \cite{spector:2016}
 \end{quotation}
 
-This is not surprising because AutoDoG has to learn how to evolve as well as learn how to solve the problem. That said, recent (unpublished) results look like there might be scenarios where autoconstruction may find solutions to problems we've never solved with regular PushGP, so we may soon have examples where autoconstruction is `better' in some meaningful sense \cite{Eva:autoconstruction}.
-\todo[inline]{FIGURE OUT HOW TO CITE NIC for previous sentence (see Notes from Sources) and/or figure out how to rephrase}
+``This is not surprising because AutoDoG has to learn how to evolve as well as learn how to solve the problem. That said, recent (unpublished) results look like there might be scenarios where autoconstruction may find solutions to problems we've never solved with regular PushGP, so we may soon have examples where autoconstruction is `better' in some meaningful sense" \todo[inline]{PARAPHRASE QUOTE FROM NIC}
 
 \todo[inline]{More info about new AutoDoG results}
 
@@ -192,7 +178,7 @@ One interesting thing to note is how AutoDoG evolves. In standard PushGP, one ca
 % latex bibtex latex latex
 % to resolve all references
 
-\todo[inline, color=yellow]{Add more of references to bib, update \cite{Eva:autoconstruction}, cite Nic?}
+\todo[inline, color=yellow]{Add more of references to bib, update \cite{eva:2017}, cite Nic?}
 
 \end{document}
 
@@ -202,7 +188,7 @@ One interesting thing to note is how AutoDoG evolves. In standard PushGP, one ca
 
 I want to refer to Section~\ref{sec:evocomp}
 and Figure~\ref{fig:twoColumnFigure}. It would also be nice
-to cite~\cite{spector:2016} and~\cite{pappa:2014} and~\cite{Eva:autoconstruction}.
+to cite~\cite{spector:2016} and~\cite{pappa:2014} and~\cite{eva:2017}.
 
 Let's make an equation:
 \[
