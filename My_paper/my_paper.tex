@@ -43,8 +43,8 @@ Elsa M. Browning\\
 
 \maketitle
 \begin{abstract}
-	 \todo[inline, color=yellow]{actually write an abstract}We will describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization. We will go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants); the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
-	 \todo[inline, color=green]{Citing stuff to see what it looks like~\cite{lee:2001}~and~\cite{pappa:2014}}
+	 \todo[inline, color=yellow]{actually write an abstract}
+	 \todo[inline, color=purple]{Citing stuff to see what it looks like~\cite{lee:2001}~and~\cite{pappa:2014}}
 	
 \end{abstract}
 
@@ -56,8 +56,8 @@ Elsa M. Browning\\
 
 Traditionally, genetic programming solutions to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well.
 
-In Section \ref{sec:push}, we describe Push, a stack-based programming language, and Plush, the linear genome format of Push, which AutoDoG uses to make its programs.\todo[inline]{still phrasing this poorly?} In Section \ref{sec:autodog} we describe how AutoDoG works. Finally, in Section \ref{sec:results} we discuss the success of AutoDoG.
-\todo[inline, color=yellow]{Not sure how much ``roadmap" I will add}
+In sections~\ref{sec:evocomp},~\ref{sec:GP},~and~\ref{sec:HH} we describe necessary background for understanding the rest of the paper. Next, we describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization in section~\ref{sec:history}. Then, in section~\ref{sec:gpvariants}, we go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants) in section~\ref{sec:ac}; the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+\todo[inline, color=yellow]{this is long roadmap. Probably need to shorten}
 
 \section{Background}
 \label{sec:background}
@@ -85,7 +85,7 @@ In Section \ref{sec:push}, we describe Push, a stack-based programming language,
 
 \section{Autoconstruction}
 \label{sec:ac}
-In genetic programming hyper heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In GPHH, only the potential solutions are evolving~--~everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction, evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as the programs evolve, the variation methods evolve (see sections~\ref{sec:evocomp}~and~\ref{sec:GP} for methods of variation, see section~\ref{sec:push} for how this works).
+In genetic programming hyper heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In GPHH, only the potential solutions are evolving~--~everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction, evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as a program evolves, its variation methods also evolve (see section~\ref{sec:push} for how this works).
 
 Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: ``Replace Space with Newline"~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{eva:2017}.
 \todo[inline, color=yellow]{Not sure how much of this is introduction stuff}
@@ -94,9 +94,9 @@ Prior work on autoconstruction has explored a variety of system designs, but, un
 \label{sec:push}
 
 Push is a stack-based programming language with a separate stack for each data type. It was developed for program evolution and autoconstruction was one of the driving forces behind the original design~\cite{spector:2016}. Push programs are strings of instructions, constants, and parentheses with only one syntax requirement: the parentheses must be balanced~\cite{lee:2001}.
-\todo[inline]{I am not sure that I should mention prev sentence, because I may want to give examples if this is mentioned...} Instructions are executed by putting them on the \texttt{exec} stack. If the necessary arguments are not available for the instruction to be executed, the instruction is skipped. For example, if a program says \texttt{(INTEGER.+)}, this means pop the first two integers off the top of the \texttt{INTEGER} stack, add them together, and push the result back on to the stack. If there are not enough integers on the stack or if the stack is empty, the instruction is skipped.
-
-\todo[inline, color=purple]{left off 7:10 in video, here (ish) in paper. Go over linear genome/Plush next}
+\todo[inline]{I am not sure that I should mention prev sentence, because I may want to give examples if this is mentioned...} 
+Instructions are executed by putting them on the \texttt{exec} stack. If the necessary arguments are not available for the instruction to be executed, the instruction is skipped. For example, assume all stacks are empty and assume a program says \texttt{(1 2 integer\_add)}. This means push 1 and 2 onto the \texttt{integer} stack and push the \texttt{integer\_add} onto the  take the \texttt{exec} stack~\cite{lee:tutorial}. The \texttt{integer\_add} instruction will try to execute: the first two integers (in this case 1 and 2)  are popped off the top of the \texttt{integer} stack, added together, and the result is pushed back on to the \texttt{integer} stack. If, instead, the program was \texttt{(1 integer\_add)} then it would push 1 onto the \texttt{integer} stack, but skip the \texttt{integer\_add} because there are not enough integers in the \texttt{integer} stack.
+\todo[inline]{not sure I should include example inline like this, might want to separate and try to shorten somehow}
 
 \begin{itemize}
 	\item Talk about:
@@ -111,18 +111,20 @@ Push is a stack-based programming language with a separate stack for each data t
 
 \subsection{AutoDoG}
 \label{sec:autodog}
-AutoDoG is unique in that is can solve some hard problems. \todo[inline]{stop saying this--you say this in like 4 places... so repetitive} We are going to discuss some of its features, however
-\begin{quotation}
-	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}.
-\end{quotation}
-This is because they have not yet studied enough features of AutoDoG to know why it works.
+In this section, we briefly describe some of the key features of AutoDoG.
 
-One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To maintain diversity, AutoDoG uses Lexicase Selection. In Lexicase selection,
+One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To do this, AutoDoG uses Lexicase Selection, described below:
+
+In each parent selection event,
 \begin{itemize}
-	\item Each parent selection event starts with pool of entire population
-	\item Pool filtered based on performance of individual fitness cases, considered in random order one at a time.
-	\item In each case, retains only individuals best on that case.
+	\item start with pool of entire population
+	\item filter pool based on how each program performs on individual fitness cases (performed in random order, and one at a time)
+	\todo[inline]{HOW do I phrase prev bullet point?}
+	\item In each fitness case, only retain programs best on that case.
 \end{itemize}
+\todo[inline, color=green]{TO NIC: is above a correct summary of lexicase selection?}
+
+\todo[inline, color=purple]{left off 10:30 in video, here (ish) in paper}
 
 Its name comes from the way it filters the population using a kind of ``lexigraphic ordering" of cases \cite{spector:2016}.
 \begin{quotation}
@@ -147,7 +149,14 @@ AutoDoG works similarly to PushGP, but is run with autoconstruction as the genet
 
 \subsection{Results}
 \label{sec:results}
-The ``hard problem" we discussed earlier is``Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
+AutoDoG is unique among autoconstructive systems in that it can solve hard problems. However, as stated by Spector et al,
+\begin{quotation}
+	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}.
+\end{quotation}
+This is because it's hard to separate the pieces; there are a lot of intertwined elements of AutoDoG and Push. Separating them to find which elements contribute to the success without unraveling the entire system is difficult and has not yet been done.
+\todo[inline, color=green]{TO NIC: Is this (above) more correct?}
+
+The ``hard problem" we mentioned earlier is ``Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
 AutoDoG does not actually do better than standard PushGP on this problem.
 \begin{quotation}
 	AutoDoG does not succeed as reliably on this problem as has PushGP in some other configurations, but it does solve the problem approximately 5-10 \% of the time, producing general solutions \cite{spector:2016}
