@@ -43,8 +43,8 @@ Elsa M. Browning\\
 
 \maketitle
 \begin{abstract}
-	 \todo[inline, color=yellow]{actually write an abstract}
-	 \todo[inline, color=purple]{Citing stuff to see what it looks like~\cite{lee:2001}~and~\cite{pappa:2014}}
+	\todo[inline, color=yellow]{actually write an abstract}
+	\todo[inline, color=purple]{Citing stuff to see what it looks like~\cite{lee:2001}~and~\cite{pappa:2014}}
 	
 \end{abstract}
 
@@ -113,7 +113,7 @@ Instructions are executed by putting them on the \texttt{exec} stack. If the nec
 \label{sec:autodog}
 In this section, we briefly describe some of the key features of AutoDoG.
 
-One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To do this, AutoDoG uses Lexicase Selection, described below:
+One thing that the designers of AutoDoG wanted to do was maintain diversity in parent selection. To do this, AutoDoG uses Lexicase Selection, described below: 
 
 In each parent selection event,
 \begin{itemize}
@@ -122,18 +122,14 @@ In each parent selection event,
 	\todo[inline]{HOW do I phrase prev bullet point?}
 	\item In each fitness case, only retain programs best on that case.
 \end{itemize}
-\todo[inline, color=green]{TO NIC: is above a correct summary of lexicase selection?}
+\todo[inline]{List or paragraph?}
+\todo[inline]{More/better description of lexi (reread section in helmuth's dissertation)}
 
-\todo[inline, color=purple]{left off 10:30 in video, here (ish) in paper}
+Its name comes from the way it filters the population using a kind of ``lexigraphic ordering" of cases \cite{spector:2016}. When tested on a benchmark suite of problems taken from introductory programming textbooks and compared to the results of other current GP parent selection techniques, Lexicase Selection allows for the solution of more problems in fewer generations~\cite{spector:2016}.
+\todo[inline]{rephrase prev sentence?}
 
-Its name comes from the way it filters the population using a kind of ``lexigraphic ordering" of cases \cite{spector:2016}.
-\begin{quotation}
-	Lexicase selection performs significantly better than the standard approach and than implicit fitness sharing, allowing the solution of more problems, in fewer generations, on a benchmark suite of problems taken from introductory programming textbooks \cite{spector:2016}.
-\end{quotation}
-\todo[inline]{will probably paraphrase previous quote since it's so long}
-
-Most autoconstruction systems have some form of the``no cloning rule" which prevents an exact copy of a program from moving on to the next generation, and AutoDoG has a form of this as well \cite{spector:2016}. AutoDoG broadens this to ``require that offspring are only allowed to enter the population if they pass a more stringent diversification test" \cite{spector:2016}.
-Test:
+\todo[inline]{talk about why lee is concerned about cloning (11:20 to 12:22 in video)!!!!}
+Most autoconstruction systems have some form of the ``no cloning rule" which prevents an exact copy of a program from moving on to the next generation, and AutoDoG has a form of this as well~\cite{spector:2016}. AutoDoG's version of this requires offspring to pass a more stringent diversification test in order to enter the population~\cite{spector:2016}. This test is described below:
 \begin{itemize}
 	\item make individual for next generation
 	\item individual takes itself as mate and makes temp children.
@@ -142,21 +138,24 @@ Test:
 	\item if random individual fails, generate individual with empty genome and add it to next generation
 	\item discard any children after test
 \end{itemize}
+\todo[inline, color=green]{TO NIC: should I rewrite so that it's not in list form? Paragraph would save space.}
 
-AutoDoG works similarly to PushGP, but is run with autoconstruction as the genetic operator rather than human designed mutation and crossover operators. Its main loop ``iteratively tests the error of all individuals and then builds the next generation by selecting parents and passing them to genetic operators" \cite{spector:2016}.
+AutoDoG works similarly to PushGP, a reasonably standard generational programming system, but is run with autoconstruction as the sole genetic operator rather than using human designed mutation and crossover operators. AutoDoG's main loop 
+\todo[inline, color=purple]{left off 13:00  in video, here (ish) in paper}
+``iteratively tests the error of all individuals and then builds the next generation by selecting parents and passing them to genetic operators" \cite{spector:2016}.
 
 \todo[inline, color=yellow]{Describe more/better, summarize long quotes, turn lists into paragraphs}
 
 \subsection{Results}
 \label{sec:results}
-AutoDoG is unique among autoconstructive systems in that it can solve hard problems. However, as stated by Spector et al,
+AutoDoG is unique among autoconstructive systems in that it can solve hard problems. However, as stated by Spector et al.~\cite{spector:2016},
 \begin{quotation}
-	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems \cite{spector:2016}.
+	We do not know which of these, or which combinations of these, may be responsible for the fact that AutoDoG appears to be capable of solving more difficult problems than previous autoconstructive evolution systems.
 \end{quotation}
-This is because it's hard to separate the pieces; there are a lot of intertwined elements of AutoDoG and Push. Separating them to find which elements contribute to the success without unraveling the entire system is difficult and has not yet been done.
+This is because it's hard to separate the pieces; there are a lot of intertwined elements of AutoDoG and Push. Separating them to find exactly which elements contribute to the success without unraveling the entire system is difficult and has not yet been done.
 \todo[inline, color=green]{TO NIC: Is this (above) more correct?}
 
-The ``hard problem" we mentioned earlier is ``Replace Space with Newline." This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
+One challenging problem AutoDoG has solved is Replace Space with Newline (RSWN). This is a software synthesis problem which, when given a string, requires the solution to print the string replacing spaces with newlines. It also requires the return of the integer count of the non-whitespace characters. This is complex because it involves multiple data types and outputs, and requires conditionals and iteration or recursion.
 AutoDoG does not actually do better than standard PushGP on this problem.
 \begin{quotation}
 	AutoDoG does not succeed as reliably on this problem as has PushGP in some other configurations, but it does solve the problem approximately 5-10 \% of the time, producing general solutions \cite{spector:2016}
