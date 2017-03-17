@@ -71,8 +71,15 @@ In sections~\ref{sec:evocomp},~\ref{sec:GP},~and~\ref{sec:HH} we describe necess
 \subsection{Hyper Heuristics}
 \label{sec:HH}
 
+
 \subsection{History of AAD}
 \label{sec:history}
+Automating algorithm design (AAD) has been investigated by several different areas for about 60 years. In the 1950s, the term ``machine learning" was defined as ``computers programming themselves"~\cite{pappa:2014}. This definition has changed over time to focus more on the learning aspect, but it's still an important area in AAD. While the field of machine learning is out of the scope of our paper, it also plays a major role in the history of AAD and was one of the first fields to do so.
+
+Focusing on the automation of heuristic methods, we can trace the beginnings of hyper heuristics (HH) to the 1960s~\cite{pappa:2014}. Early approaches of HH focused on automatically setting the parameters of evolutionary algorithms~\cite{pappa:2014}. A \textit{parameter} can be thought of as things like population size, crossover, or mutation rates. This is still a question many researchers face when designing HH systems. Generally, parameters are tuned before the evolution starts and controlled during the evolution. There are, however, exceptions.
+
+The idea of \textit{self-adaption}, where an algorithm is able to tune itself to a given problem while solving it, emerged later. Now, we have two major types of HH: \textit{heuristic selection} and \textit{heuristic generation}; the first focuses on selecting the best algorithm from a set of existing heuristics while the latter focuses on generating a new heuristic from the components of existing heuristics~\cite{pappa:2014}. Heuristic generation uses several different methods for the generation process, but we will be focusing on heuristic generation techniques that use genetic programming. 
+
 
 \section{Genetic Programming Variants}
 \label{sec:gpvariants}
