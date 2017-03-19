@@ -101,7 +101,7 @@ Now, we have two major types of HH: \textit{heuristic selection} and \textit{heu
 In genetic programming hyper-heuristics (GPHH), the goal is to use genetic programming to evolve a program that will solve hard computational search problems. The individual programs serve as potential solutions. In most GPHH, the potential solutions are evolving, but everything else is specified by the system designer. \todo[inline]{not sure how to phrase previous sentence. Also not sure if I need to clarify what I mean by ``potential solutions"} In autoconstruction (a form of GPHH), evolution is evolving as well. This happens by encoding the methods of variation into the programs that are evolving so that, as a program evolves, its variation methods also evolve (see section~\ref{sec:push} for how this works). A simplified definition of autoconstruction would be one or more parents producing one or more children, where the parents and children are programs which serve as potential solutions to a set of computational search problems.
 \todo[inline, color=green]{TO NIC: is there more I could say to summarize autoconstruciton quickly or do you think this is fine? Should I say something about how autoconstruction = only genetic operator?}
 
-Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: ``Replace Space with Newline"~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{eva:2017}.
+Prior work on autoconstruction has explored a variety of system designs, but, until recently, none of them have been able to solve hard problems. A new system called Autoconstructive Diversification of Genomes (AutoDoG) has broken this trend by solving at least one hard problem: Replace Space with Newline~\cite{spector:2016}. And, in recent unpublished work, AutoDoG has actually solved a problem that has never been solved before~\cite{eva:2017}.
 \todo[inline, color=yellow]{Not sure how much of this is introduction stuff}
 
 \subsection{Push and Plush}
@@ -156,8 +156,8 @@ AutoDoG does not actually do better than standard PushGP on this problem. It suc
 
 \todo[inline]{More info about new AutoDoG results}
 
-One interesting thing to note about AutoDoG is how it evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. Over time, change occurs at a fairly steady rate and is not very dramatic (from one generation to the next). In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
-\todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution. Maybe include DL graphs}
+One interesting thing to note about AutoDoG is how it evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. Over time, change occurs at a fairly steady rate and is not very dramatic from one generation to the next. In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
+\todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution. Include DL graphs or cut last paragraph (depending on space)}
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
 
