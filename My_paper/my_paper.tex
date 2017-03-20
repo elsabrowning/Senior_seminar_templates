@@ -53,8 +53,9 @@ Elsa M. Browning\\
 \todo[inline, color=yellow]{Mostly notes right now}
 
 Traditionally, genetic programming solutions to problems evolve, but almost everything else is specified by the system designer \cite{spector:2016}. In autoconstruction, the variation methods are evolving as well.
+\todo[inline]{maybe put in abstract?}
 
-In sections~\ref{sec:evocomp},~\ref{sec:GP},~and~\ref{sec:HH} we describe necessary background for understanding the rest of the paper. Next, we describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization in section~\ref{sec:history}. Then, in section~\ref{sec:gpvariants}, we go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants) in section~\ref{sec:ac}; the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
+In sections~\ref{sec:evocomp},~\ref{sec:GP},~and~\ref{sec:HH} we describe necessary background for understanding the rest of this paper. Next, we describe the history of automating algorithm design (AAD) with a focus on hyper-heuristics (HH) optimization in section~\ref{sec:history}. Then, in section~\ref{sec:gpvariants}, we go over a few different genetic programming variants used in HH and the success of two in particular. Finally, we will go over current research being done with stack-based genetic programming (one of the GP variants) in section~\ref{sec:ac}; the stack-based programming language called Push is used in this example along with a technique for AAD called autoconstruction.
 \todo[inline, color=yellow]{this is long roadmap. Probably need to shorten}
 
 \section{Background}
@@ -62,13 +63,18 @@ In sections~\ref{sec:evocomp},~\ref{sec:GP},~and~\ref{sec:HH} we describe necess
 
 \subsection{Evolutionary Computation}
 \label{sec:evocomp}
-Evolutionary Computation (EC) is a subfield of artificial intelligence that uses algorithms based on biological evolution to reach global optimization. These algorithms start with a population of potential solutions to a problem or set of problems, then the worst individuals from the population are removed and the remaining individuals are mutated or recombined in some way to create a new population (with the same number of individuals as the first population). Occasionally new individuals are introduced into the next population as well. This process is repeated until the \textit{global optima}, the best solution(s) possible, is found. Sometimes an algorithm is not able to find a global optima (due to the algorithm not being good enough or other factors), so it has a designated stopping point to prevent the program from running forever. This point can be things like a time limit or a generation number limit.
-\todo[inline]{is there a way I can simplify this paragraph or reword it to be better...?}
+Evolutionary Computation (EC) is a subfield of artificial intelligence that uses algorithms based on biological evolution to reach global optimization. These algorithms start with a population of potential solutions to a problem or set of problems, then the worst individuals from the population are removed. The remaining individuals are mutated or recombined in some way to create a new population with the same number of individuals as the first population. Occasionally new individuals are introduced into the next population as well. This process is repeated until the \textit{global optima}, the best solution(s) possible, is found. Sometimes an algorithm is not able to find a global optima (due to the algorithm not being good enough), so it has a designated stopping point to prevent the program from running forever trying to find it. This can be things like a time limit or a limit on the number of generations.
+\todo[inline]{is there a way I can simplify this paragraph (particularly the first sentence) or reword it to be better...?}
 
-EC techniques are very useful and can solve a wide variety of problems. There are many kinds of techniques within EC, some of which are more suited to certain types of problems than others. Some examples include genetic algorithms, gene expression programming, and artificial immune systems to name a few. In this paper, we are focusing on a family of evolutionary algorithms called genetic programming.
+EC techniques are very useful and can solve a wide variety of problems. There are many different kinds of techniques in EC, some of which are more suited to certain types of problems than others. Some examples include genetic algorithms, gene expression programming, and artificial immune systems to name a few. Genetic programming is the EC technique we will be focusing on in this paper.
 
 \subsection{Genetic Programming}
 \label{sec:GP}
+Most EC methods produce solutions in the form of a single answer (or set of answers) to a problem. In genetic programming (GP), our solutions are in the form of programs. These programs then solve a problem (or set of problems), adding a level of abstraction to the problem solving process. 
+\todo[inline]{I'm not actually sure abstraction is the right word here, but it sounds right...}
+This also automates a large part of the algorithm design process by allowing an algorithm to evolve rather than designing and revising the algorithm by hand. 
+
+GP works by encoding programs into a set of genes and then modifying those genes, usually with a genetic algorithm, to evolve a program which will perform well in a predefined task. The methods used to encode the programs into artificial chromosomes and to evaluate the fitness of a program are still under active research. There are several different GP representations and variations, each of which has pros and cons depending on the problem. We will go into more detail on these in section~\ref{sec:gpvariants}.
 
 \subsection{Hyper Heuristics}
 \label{sec:HH}
@@ -76,7 +82,7 @@ EC techniques are very useful and can solve a wide variety of problems. There ar
 
 \subsection{History of AAD}
 \label{sec:history}
-Automating algorithm design (AAD) has been investigated by several different areas for about 60 years. In the 1950s, the term ``machine learning" was defined as ``computers programming themselves"~\cite{pappa:2014}. This definition has changed over time to focus more on the learning aspect, but it's still an important area in AAD. While the field of machine learning is out of the scope of our paper, it also plays a major role in the history of AAD and was one of the first fields to do so.
+Automating algorithm design (AAD) has been investigated by several different areas for about 60 years. In the 1950s, the term ``machine learning" was defined as ``computers programming themselves"~\cite{pappa:2014}. The definition has changed over time to focus more on the learning aspect, but machine learning is still an important area in AAD. While out of the scope of our paper, machine learning plays a major role in the history of AAD and was one of the first fields to do so.
 
 Focusing on the automation of heuristic methods, we can trace the beginnings of hyper-heuristics (HH) to the 1960s (however, the term HH was not coined until 2000)~\cite{pappa:2014}. Early approaches of HH focused on automatically setting the parameters of evolutionary algorithms~\cite{pappa:2014}. A \textit{parameter} used to be thought of as things like mutation rates and crossover, however the definition has expanded to include evolutionary algorithm components like selection mechanisms, and mutation and crossover operators~\cite{pappa:2014}. Many researchers still question which parameters to tune when designing HH systems. Traditionally, parameters are tuned before the evolution starts and controlled during the evolution~\cite{pappa:2014}. There are, however, exceptions.
 
