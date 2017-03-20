@@ -159,10 +159,10 @@ One challenging problem AutoDoG has solved is Replace Space with Newline (RSWN).
 
 AutoDoG does not actually do better than standard PushGP on this problem. It succeeds less reliably than PushGP. AutoDoG solves the RSWN problem 5--10\% of the time, producing general solutions~\cite{spector:2016}. This may not seem like much, but the fact that AutoDoG solves the problem at all is actually quite impressive. It is not surprising that AutoDoG performs less reliably because AutoDoG has to learn how to evolve as well as learn how to solve the problem. In recent unpublished work however, there may be examples of autoconstruction performing `better' than PushGP in a more meaningful sense; autoconstruction has managed to find solutions to problems that have never been solved with regular PushGP~\cite{eva:2017}.
 
-\todo[inline]{More info about new AutoDoG results}
+\todo[inline]{Add more info about new AutoDoG results}
 
-One interesting thing to note about AutoDoG is how it evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. Over time, change occurs at a fairly steady rate and is not very dramatic from one generation to the next. In AutoDoG, there are huge differences between the genomes of some parents and their children. There was significant change for some individuals from one generation to the next and overall it was a bit erratic.
-\todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution. Include DL graphs or cut last paragraph (depending on space)}
+One interesting thing to note about AutoDoG is how it evolves. In standard PushGP, one can see a steady incline in differences between the genomes of parents and their children. Over time, change occurs at a steady rate and is not very dramatic from one generation to the next. In AutoDoG, there are big differences between the genomes of some parents and their children. This is interesting because the methods for evolution are encoded into the genomes in AutoDoG. These DL graphs \todo[inline]{insert DL graphs or cut this paragraph} show us how evolution is affected from one generation to the next.
+\todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution.}
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
 
