@@ -79,7 +79,7 @@ GP works by encoding programs into a set of genes and then modifying those genes
 
 \subsection{Hyper-Heuristics}
 \label{sec:HH}
-
+\todo[inline, color=yellow]{def of HH, difference between meta-heuristics and HH (and why they are often confused), define ``heuristic" }
 
 \subsection{History of AAD}
 \label{sec:history}
@@ -90,14 +90,23 @@ Focusing on the automation of heuristic methods, we can trace the beginnings of 
 The idea of \textit{self-adaption}, where an algorithm is able to tune itself to a given problem while solving it, emerged later.
 \todo[inline]{add more about evolving evolution?}
 
-Now, we have two major types of HH: \textit{heuristic selection} and \textit{heuristic generation}; the first focuses on selecting the best algorithm from a set of existing heuristics while the latter focuses on generating a new heuristic from the components of existing heuristics~\cite{pappa:2014}. Heuristic generation uses several different methods for the generation process, but we will be focusing on heuristic generation techniques that use genetic programming.
+Today there are two major types of HH: \textit{heuristic selection} and \textit{heuristic generation}; the first focuses on selecting the best algorithm from a set of existing heuristics while the latter focuses on generating a new heuristic from the components of existing heuristics~\cite{pappa:2014}. Heuristic generation uses several different methods for the generation process, but we will be focusing on heuristic generation techniques that use genetic programming.
 \todo[inline, color=yellow]{I focus pretty heavily on HH, which is good because that is the focus of paper, but feels weird because it's less of `history of AAD' and more `history of HH'}
 
 \section{Genetic Programming Variants}
 \label{sec:gpvariants}
-Hyper-heuristics (HH) use a two step process; the first step is to create a set of algorithmic primitives appropriate for tackling a specific problem class and the second step is searching that algorithmic primitive space~\cite{harris:2015}. We can use a variety of different techniques to search this space, one of which is genetic programming~(GP). In GP, there are many different variants to choose from, each of which has different strengths and weaknesses depending on the problem. 
+Hyper-heuristics (HH) use a two step process; the first step is to create a set of algorithmic primitives appropriate for tackling a specific problem class and the second step is searching that algorithmic primitive space~\cite{harris:2015}. We can use a variety of different techniques to search this space, one of which is genetic programming~(GP). In GP, there are many different variants to choose from, each of which has different strengths and weaknesses depending on the problem.
 
-Harris et al.~\cite{harris:2015} explored some of the different GP variants and compared their results on the Boolean Satisfiability Problem (SAT).
+Harris et al.~\cite{harris:2015} investigates some of the different GP variants and compares the variants' results on the Boolean Satisfiability Problem (SAT). The SAT problem is defined as: given a Boolean formula, determine if there exists a set of values that can make the formula true~\cite{harris:2015}. For a simple example, if given $(x_{1} \wedge \neg x_{2})$ then, to solve the problem, $x_{1}$ would be labeled as $true$ and $x_{2}$ as $false$. This would evaluate to $(true \wedge \neg false)$ which would evaluate to $(true \wedge true)$ which would then evaluate to $true$. There are many instances of this problem, which makes it a good class of problems to use GP on. Harris et al.~\cite{harris:2015} chose to use a subproblem of SAT called 3-SAT, which constricts the form of the Boolean function to conjunctive normal form with clauses of three variables. This causes the form of functions to look like $(x_{1} \vee x_{2} \vee x_{3}) \wedge (x_{4} \vee x_{5} \vee x_{6}) \wedge ...$ where $x_{i}$'s can be reused or inverted~\cite{harris:2015}. The SAT problem is known for its complexity and NP-completeness, which is why Harris et al.~\cite{harris:2015} chose it. To be \textit{NP-complete} means that many other difficult problems can be reduced to this problem. 
+
+The GP variants tested were Tree-based GP, Linear GP, Cartesian GP, Grammatical Evolution, and Stack-based GP. To determine any differences in performance, the five GP variants were implemented in a common framework which facilitated sharing as much code as possible~\cite{harris:2015}. This implementation may cause bias in the results, but this was a necessary risk because the alternative, attempting to maximize the performance of each GP variant at the cost of even implementation, would cause similar bias in the results~\cite{harris:2015}.
+\todo[inline]{this whole paragraph (and the one below)is all same citation, how do I cite whole paragraph?}
+
+The results from Harris et al.~\cite{harris:2015} show that the GP variant chosen has a significant impact on the success of the hyper-heuristic. Tree-based GP (TGP) and stack-based GP (SGP) performed the best and performed similarly to one another. Linear and Cartesian GP performed similarly to each other, but were not quite as good. Grammatical Evolution performed the worst. This does not mean that TGP and SGP are inherently better than other GP variants~--~it means that GP variants have different strengths and some are more suited to certain problem spaces than others.
+
+However, because TGP and SGP are related and because SGP is used in AutoDoG (see section~\ref{sec:ac}),we have described some of the pros and cons of these GP variants in sections~\ref{sec:tgp}~and~\ref{sec:sgp}.
+
+\todo[inline, color=yellow]{Reorganize and include results section under GP variants? include graph and/or table which show the significance of the results}
 
 \subsection{Tree-based Genetic Programming}
 \label{sec:tgp}
@@ -167,6 +176,12 @@ One interesting thing to note about AutoDoG is how it evolves. In standard PushG
 \todo[inline, color=yellow]{Clean up, more info about weird AutoDoG evolution.}
 \section{Conclusions and Future Work}
 \label{sec:conclusion}
+Automating algorithm design (AAD) has been a subject of research for at least the past 60 years. Hyper-heuristic optimization is a field that has devoted a lot of attention to this subject. Hyper-heuristics (HH) are heuristics that seek to automate the process of selecting, generating, or adapting simpler heuristics in order to solve computational search problems. HH are made up of a two step process: designing an algorithmic primitive space and searching that space. There are several ways to search the primitive space, but genetic programming (GP) is a very successful family of algorithms often chosen for this task. However, as discussed in Harris et al.~\cite{harris:2015}, the GP variant used may affect the overall success of a hyper-heuristic. AutoDoG, a system that has recently seen a lot of success, uses a technique called autoconstruction to evolve programs and it does this on a SGP language called Push. This system, designed by Spector et al.~\cite{spector:2016} solves Replace Space with Newline 5--10\% of the time. This is a very promising for the world of AAD.
+
+However, according to Pappa et al.~\cite{pappa:2014} in 2014, machine learning was ahead of hyper-heuristics optimization on the subject of AAD and ``can operate over different datasets, from different problem domains, and even with different features." This is not to say that hyper-heuristic optimization is no longer useful--HH can be used on different kinds of problems. It would be interesting to see machine learning techniques combined with HH and is something that may happen in future work.
+
+Something else that would be interesting to see is how different GP variants effect AutoDoG's success.
+\todo[inline]{more summarizing and discussion}
 
 \section{Acknowledgments}
 \label{sec:acknowledgments}
@@ -184,7 +199,8 @@ One interesting thing to note about AutoDoG is how it evolves. In standard PushG
 % latex bibtex latex latex
 % to resolve all references
 
-\todo[inline, color=yellow]{Add more of references to bib}
+\todo[inline, color=yellow]{Add last of references to bib}
+\todo[inline, color=yellow]{note to self: all these notes take up about half a page!}
 
 \end{document}
 
