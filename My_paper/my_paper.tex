@@ -154,8 +154,8 @@ Another thing that Spector et al.~\cite{spector:2016} was concerned about when d
 \todo[inline, color=green]{TO NIC: is this (prev sentence) actually a concern? I assume it is, but maybe it's so unlikely that it's not}
 Cloning also significantly slows down the rate of evolution. This is bad because we want to reach a solution quickly. Most autoconstruction systems have some form of the ``no cloning rule," and AutoDoG has a form of this as well~\cite{spector:2016}. AutoDoG's version of this requires offspring to pass a more stringent diversification test in order to enter the population~\cite{spector:2016}. This test starts by taking an individual genome for the next generation. Then, that individual takes itself as a mate and makes temporary children. If the children differ enough from the individual and from each other, the individual enters the population and the children are discarded. If the individual fails, a random genome is generated and the test is repeated on the random genome. If the random genome fails, a blank genome (with no code in it) is generated and passed on to the next generation.
 
-AutoDoG works similarly to PushGP, a reasonably standard generational programming system, but is run with autoconstruction as the sole genetic operator rather than using human designed mutation and crossover operators.
-\todo[inline]{say more about this?}
+AutoDoG works similarly to PushGP, a reasonably standard generational programming system, but is run with autoconstruction as the sole genetic operator rather than using human designed mutation and crossover operators. In PushGP, the rate of mutation and crossover and other things is set by the designers. In AutoDoG, methods for making children are created by the designers, but the rates at which these methods are used or how the methods get used changes through the evolution of the program. For example, \texttt{genome\_uniform\_addition} is an instruction which inserts random instructions into a program with a likelihood taken from the top of the \texttt{:float} stack.
+\todo[inline]{say more about this}
 
 \subsection{Results}
 \label{sec:results}
