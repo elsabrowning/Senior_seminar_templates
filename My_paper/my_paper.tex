@@ -10,6 +10,7 @@
 \documentclass{sig-alternate}
 \usepackage{color}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{multirow}
 
 %%%%% Uncomment the following line and comment out the previous one
 %%%%% to remove all comments
@@ -87,22 +88,44 @@ To better understand hyper-heuristics, we find it helpful to first define heuris
 
 \subsection{History of Hyper-heuristics}
 \label{sec:history}
-Automating algorithm design has been investigated by several different areas for at least 60 years. In the 1950s, the term ``machine learning" was defined as ``computers programming themselves"~\cite{pappa:2014}. This definition has changed over time to focus more on the learning aspect, but machine learning is still an important technique in the history of algorithm design automation. While out of the scope of our paper, machine learning plays a major role in the history of automating algorithm design and was one of the first fields to do so.
+Automating algorithm design has been investigated by several different areas for at least 60 years. In the 1950s, the term ``machine learning" was defined as ``computers programming themselves"~\cite{pappa:2014}. This definition has changed over time to focus more on the learning aspect, but machine learning is still used to tackle the problem of automating the design of algorithms. While it plays an important role in the history of attempting to automate algorithm design, machine learning is out of the scope of this paper so it will not be discussed further.
 
-Focusing on the automation of heuristic methods, we can trace the beginnings of hyper-heuristics to the 1960s (however, the term 'hyper-heuristic' was not coined until 2000). Early approaches to developing hyper-heuristics focused on automatically setting the parameters of evolutionary algorithms. A \textit{parameter} used to be thought of as things like mutation rates and crossover, however the definition has expanded to include evolutionary algorithm components like selection mechanisms, and mutation and crossover operators. Many researchers still question which parameters to tune when designing hyper-heuristic systems. Traditionally, parameters are tuned before the evolution starts and controlled during the evolution. There are, however, exceptions. The idea of \textit{self-adaption}, where an algorithm is able to evolve parameters while solving a given problem, emerged later (see Section~\ref{sec:ac} for an example of this kind of system).~\cite{pappa:2014}
+Focusing on the automation of heuristic methods, we can trace the beginnings of hyper-heuristics to the 1960s (however, the term `hyper-heuristic' was not coined until 2000). Early approaches to developing hyper-heuristics focused on automatically setting the parameters of evolutionary algorithms. A \textit{parameter} used to be thought of as things like mutation rates and crossover, however the definition has expanded to include evolutionary algorithm components like selection mechanisms, and mutation and crossover operators. Many researchers still question which parameters to tune when designing hyper-heuristic systems. Traditionally, parameters are tuned before the evolution starts and controlled during the evolution. There are, however, exceptions. The idea of \textit{self-adaption}, where an algorithm is able to evolve parameters while solving a given problem, emerged later (see Section~\ref{sec:ac} for an example of this kind of system).~\cite{pappa:2014}
 
-Today there are two major types of hyper-heuristics: \textit{heuristic selection} and \textit{heuristic generation}; the first focuses on selecting the best algorithm from a set of existing heuristics while the latter focuses on generating a new heuristic from the components of existing heuristics~\cite{pappa:2014}. The \textit{components} can be anything from the code of a heuristic function; this means it could be \textit{instructions}, for example adding two numbers together or determining if two strings are identical, or \textit{literals}, such as strings, integers, Booleans, etc. We will be focusing on an example of heuristic generation discussed in Section~\ref{sec:autodog}.
+Today there are two major types of hyper-heuristics: \textit{heuristic selection} and \textit{heuristic generation}; the first focuses on selecting the best algorithm from a set of existing heuristics while the latter focuses on generating a new heuristic from the components of existing heuristics~\cite{pappa:2014}. The \textit{components} can be anything from the code of a heuristic function; this means it could be \textit{instructions}, for example adding two numbers together or determining if two strings are identical, or \textit{literals}, such as strings, integers, booleans, etc. We will be focusing on an example of heuristic generation discussed in Section~\ref{sec:autodog}.
 
 \section{Genetic Programming Variants}
 \label{sec:gpvariants}
-Genetic programming~(GP) is the second step in the hyper-heursitc process. However, there are many different variations of GP, does it matter what GP variant engineers use in their hyper-heuristic? Harris et al.~\cite{harris:2015} answers this question; they performed an experiment with five different GP variants to see if the variant chosen affected the success of a hyper-heuristic. The variants tested are Tree-based GP, Linear GP, Cartesian GP, Grammatical Evolution, and Stack-based GP~--~we will discuss tree-based and stack based briefly in Sections~\ref{sec:tgp}~and~\ref{sec:sgp}. All of the listed variants were tested on the Boolean Satisfiability Problem (SAT); the SAT problem is known for its complexity and NP-completeness, which is why Harris et al. chose it~\cite{harris:2015}. To be \textit{NP-complete} means there is no known polynomial solution, and it is believed that one does not exist. SAT is also useful because many other difficult problems can be reduced to it. We will discuss the details of tree-based and stack-based GP due to their relevance in Section~\ref{sec:ac} and then go over the results of the experiment in Section~\ref{sec:gpresults}.
+Genetic programming~(GP) is the second step often used in the hyper-heursitc process. However, there are many different \textit{genetic programming variants}, or variations on the setup of GP algorithms, does it matter which one engineers use in their hyper-heuristic? Harris et al.~\cite{harris:2015} answers this question; they perform an experiment with five different GP variants to see if the variant chosen affects the success of a hyper-heuristic. The variants tested are Tree-based GP, Linear GP, Cartesian GP, Grammatical Evolution, and Stack-based GP~--~we will discuss tree-based and stack-based briefly in Sections~\ref{sec:tgp}~and~\ref{sec:sgp}. All of the listed variants were tested on the Boolean Satisfiability Problem (SAT); the SAT problem is known for its complexity and NP-completeness, which is why Harris et al. chose it. To be \textit{NP-complete} means there is no known polynomial solution, and it is believed that one does not exist. SAT is also useful because many other difficult problems can be reduced to it. We will discuss the details of tree-based and stack-based GP due to their relevance in Section~\ref{sec:ac} and then go over the experiment and results in Section~\ref{sec:gpresults}.
 
 \subsection{Tree-based Genetic Programming}
 \label{sec:tgp}
-
+Tree-based genetic programming~(TGP) is a form of GP variant that uses tree-based structures to represent programs.
+\todo[inline, color=yellow]{add more about structure/pros/maybe cons, or cut}
 \subsection{Stack-based Genetic Programming}
 \label{sec:sgp}
+\begin{table}
+	\centering
+	\begin{tabular}{|r|c|c|c|c|c|c|c|}
+		\hline
+		Input & 2 & 5 & sub & 2 & mult & 1 & equal\\
+		\hline
+		\multirow{3}{*}{Stack} & & & & & & & \\
+		&   & 5 &   & 2 &   & 1 & \\
+		& 2 & 2 & 3 & 3 & 6 & 6 & false \\
+		\hline
+	\end{tabular}
+	\caption{Each column shows an input element and the contents of the Stack after processing that input.}
+	\label{tab:stacks}
+\end{table}
 
+Stack-based GP~(SGP) represents programs in the form of linear sequences designed to be simpler and more efficient than tree-based GP. SGP uses data-stacks to manage the input and output of operations. To explain data-stacks, it's helpful to look at an example. If we have the program $(5-2)*2=1)$, we would first put it into \textit{postfix} notation, which is where any arguments or parameters for a command are stated before that command: \texttt{2~5~sub~2~mult~1~equal}. Here, `sub' means subtract, `mult' means multiply, and `equal' means take two numbers and return \texttt{true} if they are equal and \texttt{false} if they are not.
+
+In Table~\ref{tab:stacks}, this program is shown being input into a stack. When the stack encounters \textit{terminals}, such as strings, integers, booleans, etc., they are simply pushed onto the stack. When the stack encounters \textit{primitives}, they are executed by taking elements off of the stack and pushing their results back onto the stack. For instance, if we look at the first part of the program, \texttt{(2~5~sub)}, we would push the 2 and 5 (which are terminals) onto the stack and then execute the subtract (which is a primitive). The subtract is executed by popping the top integer off of the stack, which would be 5, and popping the second integer off of the stack, which would be 2, and subtracting the second integer from the first, which would be $5-2$. The numbers are popped off in this order due to the first-in-last-out nature of stacks. We would then push the result, 3, back onto the stack. If, say, our program had started with \texttt{2 sub} instead, we would push the 2 onto the stack, and skip the subtract because there would not be enough arguments to execute it. This means the next part of the program would push 2 onto the stack, and execute the \texttt{mult} leaving 4 in the place of the 6 in the table.
+
+At the end of Table~\ref{tab:stacks}, we can see that \texttt{false} is left on the stack. Generally, the top item on the stack at the end of a program is the answer to a problem that the program is trying to solve. Some SGP languages have multiple data-stacks, where there is a stack for each \textit{data type}, which are things like strings, integers, booleans, etc. This means that there is an execution stack, where the program is input to, and separate stacks that the data is pushed onto depending on its data type. To see an example of a SGP with multiple stacks, see Section~\ref{sec:push}.
+
+SGP are useful for hyper-heuristics because of the ability to skip instructions. This means that if a terminal is deleted from a program during the evolution phase, the program can still execute. SGP are also useful because of a special instruction called ``\texttt{dup}," which allows the program to duplicate a terminal on the stack.
 
 \subsection{Results}
 \label{sec:gpresults}
@@ -113,7 +136,7 @@ Genetic programming~(GP) is the second step in the hyper-heursitc process. Howev
 	\label{fig:gpvariants}
 \end{figure}
 
-To determine any differences in performance, the five GP variants were implemented in a common framework which facilitated sharing as much code as possible. This implementation may cause bias in the results, but this was a necessary risk because the alternative, attempting to maximize the performance of each GP variant at the cost of even implementation, would cause similar bias in the results.~\cite{harris:2015}
+To determine any differences in performance, the five GP variants were implemented in a common framework which facilitated sharing as much code as possible. This implementation may cause bias in the results, but this was a necessary risk because the alternative would cause similar bias; the alternative is attempting to maximize the performance of each GP variant at the cost of keeping a common implementation for all of the GP variants~\cite{harris:2015}
 
 The GP variants were tested on 2000 different instances, or \textit{clauses}, of the SAT problem. First each hyper-heuristic (which is the same except for the GP variant used), is run 30 times on a separate set of SAT clauses to "train" the hyper-heuristic. Next, the best individual program from each run of each hyper-heuristic is tested on the 2000 test clauses 3 separate times. These results are shown in Figure~\ref{fig:gpvariants}.
 
@@ -130,7 +153,6 @@ Prior work on autoconstruction has explored a variety of system designs, but, un
 \subsection{Push and Plush}
 \label{sec:push}
 Push is a stack-based programming language with a separate stack for each data type. It was developed for program evolution and autoconstruction was one of the driving forces behind the original design~\cite{spector:2016}. This is the programming language that AutoDoG, the system we describe in Section~\ref{sec:autodog}, uses. Push programs are strings of instructions, constants, and parentheses with only one syntax requirement: the parentheses must be balanced~\cite{lee:2001}. Instructions are executed by putting them on the \texttt{exec} stack. If the necessary arguments are not available for the instruction to be executed, the instruction is skipped. For example, assume all stacks are empty and assume a program says \texttt{(1 2 integer\_add)}. This means push 1 and 2 onto the \texttt{integer} stack and push the \texttt{integer\_add} onto the \texttt{exec} stack~\cite{lee:tutorial}. The \texttt{integer\_add} instruction will try to execute: the first two integers (in this case 1 and 2)  are popped off the top of the \texttt{integer} stack, added together, and the result (in this case 3) is pushed back on to the \texttt{integer} stack. Since there were enough arguments, the instruction executes: 1 and 2 are popped off the \textit{integer} stack and 3 is pushed onto the \textit{integer} stack. If, instead, the program was \texttt{(1 integer\_add)} then it would push 1 onto the \texttt{integer} stack, but skip the \texttt{integer\_add} because there are not enough integers in the \texttt{integer} stack for the instruction to execute. This would leave us with 1 on the \textit{integer} stack.
-\todo[inline]{not sure I should include example inline like this, might want to separate out to a figure and try to shorten somehow}
 
 Plush is a linear genome format for Push~\cite{spector:2016}. This can be thought of as computerized DNA. It is a program in a linear format to make program evolution easier.
 \todo[inline, color=green]{TO NIC: Is this accurate? This is how I have been thinking about linear genomes. Is this actually linear GP and using the registers (if so, should I talk about registers) or is it different?}
