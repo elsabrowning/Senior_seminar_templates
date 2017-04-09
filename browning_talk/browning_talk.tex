@@ -108,15 +108,72 @@
 
 \subsection{Evolutionary Computation}
 
-%\begin{frame}
-%	\frametitle{Evolutionary Computation}
-%\end{frame}
+\begin{frame}
+	\frametitle{Evolutionary Computation}
+	\centering
+	\includegraphics[width=.6\textwidth]{Illustrations/evolution.jpg}
+	\\
+	\only{\tiny{\url{https://www.spigotmc.org/attachments/evolution-jpg.137048/} }}
+	\large
+	\begin{itemize}
+		\item Subfield of Artificial Intelligence
+		\pause
+		\item Algorithms based on biological evolution
+		\pause
+		\item Uses lots of terminology from biology, doesn't always mean same thing as term means in biology.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evolutionary Computation~--~Terminology}
+	\begin{itemize}
+		\item \textbf{Individual}~--~a potential solution to a problem (or set of problems)
+		\linespace
+		\pause
+		\item \textbf{Population}~--~a group of individuals
+		\linespace
+		\pause
+		\item \textbf{Fit}~--~how well suited an individual is at solving a problem
+		\linespace
+		\pause
+		\item \textbf{Fitness Test}~--~a set of tests to determine how fit an individual is.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evolutionary Computation~--~Terminology}
+	\begin{itemize}
+		\item \textbf{Mutation}~--~an insertion, deletion, or small change in the code of an individual, creating a new individual
+		\linespace
+		\pause
+		\item \textbf{Sexual reproduction}~--~when two or more individuals are munged together to create a new individual
+		\linespace
+		\pause
+		\item \textbf{Generation}~--~a population of individuals
+		\pause
+		\linespace
+		\item \textbf{Global optima}~--~best solution (or solutions) possible
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evolutionary Computation~--~Terminology}
+	If individual A experiences a mutation to create individual B, then:
+	\begin{itemize}
+		\pause
+		\item \textbf{Parent}~--~Individual A
+		\linespace
+		\pause
+		\item \textbf{Child}~--~Individual B
+	\end{itemize}
+\end{frame}
 
 \subsection{Genetic Programming}
 
-%\begin{frame}
-%	\frametitle{Genetic Programming}
-%\end{frame}
+\begin{frame}
+	\frametitle{Genetic Programming}
+	A family of algorithms in Evolutionary Computation that uses biological techniques to create programs to solve computational problems.
+\end{frame}
 
 \section[Hyper-heuristics]{Hyper-heuristics}
 
@@ -129,9 +186,10 @@
 %\end{frame}
 
 \section[GP Variants]{Genetic Programming Variants}
-\subsection{Why they matter}
-\subsection{Stack-based genetic programming}
 
+\subsection{Why they matter}
+
+\subsection{Stack-based genetic programming}
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
@@ -140,11 +198,11 @@
 			\linespace
 			\linespace
 			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\pause Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
 			\[\texttt{(1 2 integer\_equal)}\]
 		\end{column}
 	\begin{column}{0.4\textwidth}
-		\includegraphics[height=1.2\textwidth]{Illustrations/empty_stacks.PDF}
+		\pause[0] \includegraphics[height=1.2\textwidth]{Illustrations/empty_stacks.PDF}
 	\end{column}
 	\end{columns}
 \end{frame}
@@ -323,17 +381,23 @@
 
 \subsection{What is it?}
 
-%\begin{frame}
-%	\frametitle{What is Autoconstruction?}
-%\end{frame}
+\begin{frame}
+	\frametitle{What is Autoconstruction?}
+	Autoconstruction is a type of GPHH
+	\linespace
+	\pause
+	In most GPHH, the individual programs are evolving, but everything else is specified by the engineer; in autoconstruction, evolution is evolving as well.
+	\linespace
+	\pause
+	This means programs in autoconstruction are responsible for evolving solutions \textit{and} responsible for evolving their offspring.
+\end{frame}
 
 \subsection{AutoDoG}
 
-%\begin{frame}
-%	\frametitle{The system called AutoDoG}
-%\end{frame}
+\begin{frame}
+	\frametitle{The system called AutoDoG}
+\end{frame}
 
-\subsection{Evolution is evolving!}
 \subsection{Results}
 
 \section[Summary]{Summary}
