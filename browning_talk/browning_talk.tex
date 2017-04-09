@@ -126,18 +126,41 @@
 
 \begin{frame}
 	\frametitle{Evolutionary Computation~--~Terminology}
-	\begin{itemize}
-		\item \textbf{Individual}~--~a potential solution to a problem (or set of problems)
-		\linespace
-		\pause
-		\item \textbf{Population}~--~a group of individuals
-		\linespace
-		\pause
-		\item \textbf{Fit}~--~how well suited an individual is at solving a problem
-		\linespace
-		\pause
-		\item \textbf{Fitness Test}~--~a set of tests to determine how fit an individual is.
-	\end{itemize}
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{itemize}
+				\item \textbf{Individual}~--~a potential solution to a problem (or set of problems)
+				\linespace
+				\linespace
+				\linespace
+				\pause
+				\item \textbf{Population}~--~a group of individuals
+				\linespace
+				\linespace
+				\linespace
+				\pause
+				\item \textbf{Fit}~--~how well suited an individual is at solving a problem
+				\linespace
+				\linespace
+				\linespace
+				\pause
+				\item \textbf{Fitness Test}~--~a set of tests to determine how fit an individual is.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\pause[0]
+			\includegraphics[width=.25\textwidth]{Illustrations/individual.PDF}
+			\linespace
+			\pause[2]
+			\includegraphics[height=.4\textwidth]{Illustrations/population.PDF}
+			\linespace
+			\pause[3]
+			\includegraphics[height=.5\textwidth]{Illustrations/fit.PDF}
+			\linespace
+			\pause[4]
+			\includegraphics[height=.7\textwidth]{Illustrations/fitness_test.PDF}
+		\end{column}
+		\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -159,13 +182,27 @@
 \begin{frame}
 	\frametitle{Evolutionary Computation~--~Terminology}
 	If individual A experiences a mutation to create individual B, then:
-	\begin{itemize}
-		\pause
-		\item \textbf{Parent}~--~Individual A
-		\linespace
-		\pause
-		\item \textbf{Child}~--~Individual B
-	\end{itemize}
+	\begin{columns}
+		\begin{column}{.6\textwidth}
+			\begin{itemize}
+				\pause
+				\item \textbf{Parent}~--~Individual A
+				\linespace
+				\linespace
+				\linespace
+				\linespace
+				\pause
+				\item \textbf{Child}~--~Individual B
+			\end{itemize}
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\pause[2]
+			\includegraphics[height=.4\textwidth]{Illustrations/individual.PDF}
+			\linespace
+			\pause[3]
+			\includegraphics[height=.6\textwidth]{Illustrations/child.PDF}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \subsection{Genetic Programming}
@@ -175,19 +212,80 @@
 	A family of algorithms in Evolutionary Computation that uses biological techniques to create programs to solve computational problems.
 \end{frame}
 
+\begin{frame}
+	\frametitle{Genetic Programming~--~structure for evolution}
+	\includegraphics[height=.9\textheight]{Illustrations/gp_1.PDF}
+\end{frame}
+\begin{frame}
+	\frametitle{Genetic Programming~--~structure for evolution}
+	\includegraphics[height=.9\textheight]{Illustrations/gp_2.PDF}
+\end{frame}
+\begin{frame}
+	\frametitle{Genetic Programming~--~structure for evolution}
+	\includegraphics[height=.9\textheight]{Illustrations/gp_3.PDF}
+\end{frame}
+\begin{frame}
+	\frametitle{Genetic Programming~--~structure for evolution}
+	\includegraphics[height=.9\textheight]{Illustrations/gp_4.PDF}
+\end{frame}
+\begin{frame}
+	\frametitle{Genetic Programming~--~structure for evolution}
+	\includegraphics[height=.9\textheight]{Illustrations/gp_5.PDF}
+\end{frame}
+
 \section[Hyper-heuristics]{Hyper-heuristics}
-
 \subsection{What they are}
-\subsection{What they aren't}
-\subsection{How they work}
 
-%\begin{frame}
-%	\frametitle{What are hyper-heuristics?}
-%\end{frame}
+\begin{frame}
+	\frametitle{Heuristic}
+	\begin{columns}
+		\begin{column}{.6\textwidth}
+			\textit{Heuristic}~--~a function that ranks alternatives in a search algorithm at each branching step and uses that information to choose which branch to follow.
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\pause
+			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
+			\\
+			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Heuristic}
+	\begin{columns}
+		\begin{column}{.6\textwidth}
+			``if knapsack is not full, put largest valued item into knapsack. If this item would cause knapsack to be overweight, take the next highest valued item and put it into the knapsack. Repeat until all items are gone"
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
+			\\
+			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Heuristic}
+	\begin{columns}
+		\begin{column}{.6\textwidth}
+			``if knapsack is not full, put largest valued item into knapsack. If this item would cause knapsack to be overweight, take the next highest valued item and put it into knapsack. Repeat until all items are gone or knapsack is full"
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
+			\\
+			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\subsection{How they work}
 
 \section[GP Variants]{Genetic Programming Variants}
 
 \subsection{Why they matter}
+
+
 
 \subsection{Stack-based genetic programming}
 \begin{frame}
@@ -383,19 +481,21 @@
 
 \begin{frame}
 	\frametitle{What is Autoconstruction?}
-	Autoconstruction is a type of GPHH
-	\linespace
-	\pause
-	In most GPHH, the individual programs are evolving, but everything else is specified by the engineer; in autoconstruction, evolution is evolving as well.
-	\linespace
-	\pause
-	This means programs in autoconstruction are responsible for evolving solutions \textit{and} responsible for evolving their offspring.
+	\begin{itemize}
+		\item Autoconstruction is a type of GPHH
+		\linespace
+		\pause
+		\item In most GPHH, the individual programs are evolving, but everything else is specified by the engineer; in autoconstruction, evolution is evolving as well.
+		\linespace
+		\pause
+		\item Programs are responsible for evolving solutions \textit{and} responsible for evolving their offspring.
+	\end{itemize}
 \end{frame}
 
 \subsection{AutoDoG}
 
 \begin{frame}
-	\frametitle{The system called AutoDoG}
+	\frametitle{AutoDoG}
 \end{frame}
 
 \subsection{Results}
