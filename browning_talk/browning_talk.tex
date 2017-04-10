@@ -28,7 +28,7 @@
 \newcommand{\tabletie}[1]{\color{MyLightGray} {#1}}
 % The text in square brackets is the short version of your title and will be used in the
 % header/footer depending on your theme.
-\title[AAD through GPHH]{Automating Algorithm Design through\\Genetic Programming Hyper-Heuristics}
+\title[AAD through GPHH]{Automating Algorithm Design through\\Genetic Programming Hyper-Heuristicss}
 
 % Sub-titles are optional - uncomment and edit the next line if you want one.
 % \subtitle{Why does sub-tree crossover work?} 
@@ -213,34 +213,34 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Genetic Programming~--~structure for evolution}
+	\frametitle{Genetic Programming}
 	\includegraphics[height=.9\textheight]{Illustrations/gp_1.PDF}
 \end{frame}
 \begin{frame}
-	\frametitle{Genetic Programming~--~structure for evolution}
+	\frametitle{Genetic Programming}
 	\includegraphics[height=.9\textheight]{Illustrations/gp_2.PDF}
 \end{frame}
 \begin{frame}
-	\frametitle{Genetic Programming~--~structure for evolution}
+	\frametitle{Genetic Programming}
 	\includegraphics[height=.9\textheight]{Illustrations/gp_3.PDF}
 \end{frame}
 \begin{frame}
-	\frametitle{Genetic Programming~--~structure for evolution}
+	\frametitle{Genetic Programming}
 	\includegraphics[height=.9\textheight]{Illustrations/gp_4.PDF}
 \end{frame}
 \begin{frame}
-	\frametitle{Genetic Programming~--~structure for evolution}
+	\frametitle{Genetic Programming}
 	\includegraphics[height=.9\textheight]{Illustrations/gp_5.PDF}
 \end{frame}
 
 \section[Hyper-heuristics]{Hyper-heuristics}
-\subsection{What they are}
+\subsection{Heuristics}
 
 \begin{frame}
-	\frametitle{Heuristic}
+	\frametitle{Heuristics}
 	\begin{columns}
 		\begin{column}{.6\textwidth}
-			\textit{Heuristic}~--~a function that ranks alternatives in a search algorithm at each branching step and uses that information to choose which branch to follow.
+			\textbf{Heuristics}~--~a function that ranks alternatives in a search algorithm at each branching step and uses that information to choose which branch to follow.
 		\end{column}
 		\begin{column}{.4\textwidth}
 			\pause
@@ -252,7 +252,7 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{Heuristic}
+	\frametitle{Heuristics}
 	\begin{columns}
 		\begin{column}{.6\textwidth}
 			``if knapsack is not full, put largest valued item into knapsack. If this item would cause knapsack to be overweight, take the next highest valued item and put it into the knapsack. Repeat until all items are gone"
@@ -265,27 +265,42 @@
 	\end{columns}
 \end{frame}
 
+\subsection{Metaheuristics}
+
 \begin{frame}
-	\frametitle{Heuristic}
-	\begin{columns}
-		\begin{column}{.6\textwidth}
-			``if knapsack is not full, put largest valued item into knapsack. If this item would cause knapsack to be overweight, take the next highest valued item and put it into knapsack. Repeat until all items are gone or knapsack is full"
-		\end{column}
-		\begin{column}{.4\textwidth}
-			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
-			\\
-			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
-		\end{column}
-	\end{columns}
+	\frametitle{Metaheuristic}
+	\textbf{Metaheuristic}~--~a heuristic that does not require knowledge about the problem and is not problem specific
+	\linespace
 \end{frame}
 
-\subsection{How they work}
+\subsection{Hyper-heuristics}
+
+\begin{frame}
+	\frametitle{Hyper-heuristics}
+	\includegraphics[height=.9\textheight]{Illustrations/heuristic_1.PDF}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hyper-heuristics}
+	\includegraphics[height=.9\textheight]{Illustrations/heuristic_2.PDF}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Hyper-heuristics}
+	\textbf{Hyper-heuristics}~--~heuristic search methods which seek to automate the process of selecting, generating, or adapting several simpler heuristics in order to solve computational search problems.
+	\linespace
+	\pause
+	\textbf{Genetic programming hyper-heuristics}~--~hyper-heuristics that use genetic programming for the process of selecting, generating, or adapting several simpler heuristics.
+\end{frame}
 
 \section[GP Variants]{Genetic Programming Variants}
 
 \subsection{Why they matter}
 
-
+\begin{frame}
+	\frametitle{Genetic programming variants}
+	Variations on the structure and setup of a genetic programming system
+\end{frame}
 
 \subsection{Stack-based genetic programming}
 \begin{frame}
