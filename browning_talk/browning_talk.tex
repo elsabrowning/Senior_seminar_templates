@@ -251,20 +251,6 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}
-	\frametitle{Heuristics}
-	\begin{columns}
-		\begin{column}{.6\textwidth}
-			``if knapsack is not full, put largest valued item into knapsack. If this item would cause knapsack to be overweight, take the next highest valued item and put it into the knapsack. Repeat until all items are gone"
-		\end{column}
-		\begin{column}{.4\textwidth}
-			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
-			\\
-			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
-		\end{column}
-	\end{columns}
-\end{frame}
-
 \subsection{Metaheuristics}
 
 \begin{frame}
@@ -276,7 +262,7 @@
 \subsection{Hyper-heuristics}
 
 \begin{frame}
-	\frametitle{Hyper-heuristics}
+	\frametitle{Heuristics and Metaheuristics}
 	\includegraphics[height=.9\textheight]{Illustrations/heuristic_1.PDF}
 \end{frame}
 
@@ -295,11 +281,31 @@
 
 \section[GP Variants]{Genetic Programming Variants}
 
-\subsection{Why they matter}
+\subsection{What are they?}
 
 \begin{frame}
 	\frametitle{Genetic programming variants}
-	Variations on the structure and setup of a genetic programming system
+	\textbf{GP variants}~--~variations on the structure and setup of a genetic programming system.
+	\linespace
+	\pause
+	Harris et al.~\cite{harris:2015} performed an experiment to address whether or not the GP variant used affected the success of the hyper-heuristic
+	\linespace
+	\pause
+	GP variants tested:
+	\begin{itemize}
+		\item Cartesian GP
+		\item Linear GP
+		\item Stack-based GP
+		\item Tree-based GP
+		\item Grammatical Evolution
+	\end{itemize}
+\end{frame}
+
+\subsection{Why should we care?}
+\begin{frame}
+	\frametitle{Why should we care?}
+	\includegraphics[width=1\textwidth]{Illustrations/gpvariant_graph.PDF}
+	\\
 \end{frame}
 
 \subsection{Stack-based genetic programming}
@@ -497,7 +503,7 @@
 \begin{frame}
 	\frametitle{What is Autoconstruction?}
 	\begin{itemize}
-		\item Autoconstruction is a type of GPHH
+		\item Autoconstruction is a type of genetic programming hyper-heuristic~(GPHH)
 		\linespace
 		\pause
 		\item In most GPHH, the individual programs are evolving, but everything else is specified by the engineer; in autoconstruction, evolution is evolving as well.
@@ -511,10 +517,38 @@
 
 \begin{frame}
 	\frametitle{AutoDoG}
+	A system that uses autoconstruction to evolve programs designed by Spector et al.~\cite{spector:2016}.
+	
 \end{frame}
 
 \subsection{Results}
 
 \section[Summary]{Summary}
+
+\begin{frame} 
+	\frametitle{References} 
+	
+	\begin{thebibliography}{lskdjf}
+		
+		\bibitem{harris:2015}
+		S.~Harris, T.~Bueter, and D.~R.~Tauritz.
+		\newblock A Comparison of Genetic Programming Variants for Hyper-Heuristics.
+		\newblock In Sara~Silva, editors, {\em GECCO '15}, pages 1043--1050, Madrid, Spain 2015.
+		
+		\bibitem{spector:2016}
+		L.~Spector, N.~F.~McPhee, T.~Helmuth, M.~M.~Casale, and J.~Oks.
+		\newblock Evolution Evolves with Autoconstruction.
+		\newblock In T.~Friedrich, \emph{et al}, editors, {\em GECCO '16}, pages 1349--1356, Denver, Colorado, USA 2016.
+		
+	\end{thebibliography}
+	
+	\linespace
+	\begin{center}
+		See my paper for additional references.
+	\end{center}
+\end{frame} 
+
+\end{document}
+
 
 \end{document}
