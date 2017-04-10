@@ -305,7 +305,9 @@
 \begin{frame}
 	\frametitle{Why should we care?}
 	\includegraphics[width=1\textwidth]{Illustrations/gpvariant_graph.PDF}
-	\\
+	\linespace
+	\centering
+	\only{\tiny{Graph taken from Harris et al.~\cite{harris:2015}}}
 \end{frame}
 
 \subsection{Stack-based genetic programming}
@@ -673,7 +675,68 @@
 
 \subsection{Results of AutoDoG}
 
+\begin{frame}
+	\frametitle{Results of AutoDoG}
+	AutoDoG has solved Replace Space with New Line~(RSWN).
+	\linespace
+	\linespace
+	\pause
+	RSWN: given a string S, print S with all spaces replaced with new lines and return the integer count of all non-whitespace characters.
+\end{frame}
+
+\begin{frame}
+	\frametitle{Results of AutoDoG}
+	AutoDoG solves RSWN 5--10\% of the time, where PushGP solves this problem 50\% of the time.
+	\linespace
+	\linespace
+	\pause
+	\centering
+	This is actually really impressive!
+\end{frame}
+
+\begin{frame}
+	\frametitle{Results of AutoDoG}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\includegraphics[width=.9\textwidth]{Illustrations/dlstandard.PDF}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\includegraphics[width=.9\textwidth]{Illustrations/dlac.PDF}
+		\end{column}
+	\end{columns}
+	\linespace
+	\centering
+	\only{\tiny{Graphs taken from Spector et al.~\cite{spector:2016}}}
+\end{frame}
+
+
 \section[Summary]{Summary}
+
+\begin{frame}
+	\frametitle{Summary}
+	\begin{itemize}
+		\item Genetic programming hyper-heuristics~(GPHH) for heuristic/program evolution
+		\linespace
+		\pause
+		\item There are many types of GP variants, and the variant chosen may affect the success of the hyper-heuristic
+		\linespace
+		\pause
+		\item Autoconstruction is a type of GPHH
+		\linespace
+		\pause
+		\item AutoDoG is a newer autoconstructive system that uses stack-based GP and has had recent success in the field of automating algorithm design
+		\linespace
+		\pause
+		\item AutoDoG/autoconstruction is special because evolution is evolving
+		\linespace
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Summary}
+	\centering
+	\large This may drastically change the way we program in the future!
+\end{frame}
 
 \begin{frame} 
 	\frametitle{References} 
@@ -691,14 +754,19 @@
 		\newblock In T.~Friedrich, \emph{et al}, editors, {\em GECCO '16}, pages 1349--1356, Denver, Colorado, USA 2016.
 		
 	\end{thebibliography}
-	
 	\linespace
 	\begin{center}
 		See my paper for additional references.
 	\end{center}
 \end{frame} 
 
-\end{document}
-
+\begin{frame}
+	\frametitle{Acknowledgments}
+	\centering
+	Special thanks to Nic McPhee and Elena Machkasova for their feedback and constructive comments.
+	\linespace
+	\linespace
+	\large Thanks for coming!
+\end{frame}
 
 \end{document}
