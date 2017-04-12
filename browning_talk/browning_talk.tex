@@ -133,31 +133,27 @@
 				\linespace
 				\linespace
 				\linespace
-				\pause
 				\item \textbf{Population}~--~a group of individuals
 				\linespace
 				\linespace
 				\linespace
-				\pause
 				\item \textbf{Fit}~--~how well suited an individual is at solving a problem
 				\linespace
 				\linespace
 				\linespace
-				\pause
 				\item \textbf{Fitness Test}~--~a set of tests to determine how fit an individual is.
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.3\textwidth}
-			\pause[0]
 			\includegraphics[width=.25\textwidth]{Illustrations/individual.PDF}
 			\linespace
-			\pause[2]
+
 			\includegraphics[height=.4\textwidth]{Illustrations/population.PDF}
 			\linespace
-			\pause[3]
+
 			\includegraphics[height=.5\textwidth]{Illustrations/fit.PDF}
 			\linespace
-			\pause[4]
+
 			\includegraphics[height=.7\textwidth]{Illustrations/fitness_test.PDF}
 		\end{column}
 		\end{columns}
@@ -168,30 +164,19 @@
 	\begin{itemize}
 		\item \textbf{Mutation}~--~an insertion, deletion, or small change in the code of an individual, creating a new individual
 		\linespace
-		\pause
 		\item \textbf{Sexual reproduction}~--~when two or more individuals are munged together to create a new individual
 		\linespace
 		\pause
-		\item \textbf{Generation}~--~a population of individuals
-		\pause
-		\linespace
-		\item \textbf{Global optima}~--~best solution (or solutions) possible
 	\end{itemize}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Evolutionary Computation~--~Terminology}
-	If individual A experiences a mutation to create individual B, then:
+		If individual A experiences a mutation to create individual B, then:
 	\begin{columns}
 		\begin{column}{.6\textwidth}
 			\begin{itemize}
-				\pause
 				\item \textbf{Parent}~--~Individual A
 				\linespace
 				\linespace
 				\linespace
 				\linespace
-				\pause
 				\item \textbf{Child}~--~Individual B
 			\end{itemize}
 		\end{column}
@@ -199,10 +184,21 @@
 			\pause[2]
 			\includegraphics[height=.4\textwidth]{Illustrations/individual.PDF}
 			\linespace
-			\pause[3]
-			\includegraphics[height=.6\textwidth]{Illustrations/child.PDF}
+			\pause[2]
+			\includegraphics[height=.5\textwidth]{Illustrations/child.PDF}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Evolutionary Computation~--~Terminology}
+	\begin{itemize}
+		\item \textbf{Generation}~--~a population of individuals
+		\linespace
+		\item \textbf{Global optima}~--~best solution (or solutions) possible
+		\linespace
+		\item \textbf{Stopping point}~--~time limit, or generation limit.
+	\end{itemize}
 \end{frame}
 
 \subsection{Genetic Programming}
@@ -241,9 +237,13 @@
 	\begin{columns}
 		\begin{column}{.6\textwidth}
 			\textbf{Heuristics}~--~a function that ranks alternatives in a search algorithm at each branching step and uses that information to choose which branch to follow.
+			\pause[3]
+			\linespace
+			\linespace
+			\textit{Example}: ``Select highest valued item and put into knapsack. If item puts knapsack overweight, select next highest value instead. Repeat until all items are gone or until the knapsack is full"
 		\end{column}
 		\begin{column}{.4\textwidth}
-			\pause
+			\pause[2]
 			\includegraphics[height=.45\textheight]{Illustrations/knapsack.PNG}
 			\\
 			\only{\tiny{\url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
@@ -251,18 +251,10 @@
 	\end{columns}
 \end{frame}
 
-\subsection{Metaheuristics}
-
-\begin{frame}
-	\frametitle{Metaheuristic}
-	\textbf{Metaheuristic}~--~a heuristic that does not require knowledge about the problem and is not problem specific
-	\linespace
-\end{frame}
-
 \subsection{Hyper-heuristics}
 
 \begin{frame}
-	\frametitle{Heuristics and Metaheuristics}
+	\frametitle{Heuristics}
 	\includegraphics[height=.9\textheight]{Illustrations/heuristic_1.PDF}
 \end{frame}
 
@@ -314,16 +306,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			\pause Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-	\begin{column}{0.4\textwidth}
-		\pause[0] \includegraphics[height=1.2\textwidth]{Illustrations/empty_stacks.PDF}
+	\begin{column}{0.35\textwidth}
+		\pause[0] \includegraphics[height=.7\textheight]{Illustrations/empty_stacks.PDF}
 	\end{column}
 	\end{columns}
 \end{frame}
@@ -331,16 +323,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_1.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_1.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -348,16 +340,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_2.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_2.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -365,16 +357,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_3.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -382,16 +374,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_4.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3_5.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -399,16 +391,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_5.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3_6.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -416,16 +408,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_6.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3_7.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -433,16 +425,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_7.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3_8.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -450,16 +442,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_8.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_3_9.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -467,16 +459,16 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_9.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_4.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -484,16 +476,101 @@
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
-		\begin{column}{0.6\textwidth}
+		\begin{column}{0.65\textwidth}
 			Data-stacks are used for managing input and output of operations.
 			\linespace
 			\linespace
 			\linespace
 			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 2 integer\_equal)}\]
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
-		\begin{column}{0.4\textwidth}
-			\includegraphics[height=1.2\textwidth]{Illustrations/stack_10.PDF}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_5.PDF}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stack-based genetic programming}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			Data-stacks are used for managing input and output of operations.
+			\linespace
+			\linespace
+			\linespace
+			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_6.PDF}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stack-based genetic programming}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			Data-stacks are used for managing input and output of operations.
+			\linespace
+			\linespace
+			\linespace
+			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_7.PDF}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stack-based genetic programming}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			Data-stacks are used for managing input and output of operations.
+			\linespace
+			\linespace
+			\linespace
+			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_8.PDF}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stack-based genetic programming}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			Data-stacks are used for managing input and output of operations.
+			\linespace
+			\linespace
+			\linespace
+			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_9.PDF}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Stack-based genetic programming}
+	\begin{columns}
+		\begin{column}{0.65\textwidth}
+			Data-stacks are used for managing input and output of operations.
+			\linespace
+			\linespace
+			\linespace
+			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
+			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
+		\end{column}
+		\begin{column}{0.35\textwidth}
+			\includegraphics[height=.7\textheight]{Illustrations/stack_10.PDF}
 		\end{column}
 	\end{columns}
 \end{frame}
