@@ -210,23 +210,17 @@
 
 \begin{frame}
 	\frametitle{Genetic Programming}
-	\includegraphics[height=.9\textheight]{Illustrations/gp_1.PDF}
-\end{frame}
-\begin{frame}
-	\frametitle{Genetic Programming}
-	\includegraphics[height=.9\textheight]{Illustrations/gp_2.PDF}
-\end{frame}
-\begin{frame}
-	\frametitle{Genetic Programming}
-	\includegraphics[height=.9\textheight]{Illustrations/gp_3.PDF}
-\end{frame}
-\begin{frame}
-	\frametitle{Genetic Programming}
-	\includegraphics[height=.9\textheight]{Illustrations/gp_4.PDF}
-\end{frame}
-\begin{frame}
-	\frametitle{Genetic Programming}
-	\includegraphics[height=.9\textheight]{Illustrations/gp_5.PDF}
+	\only<1>{\includegraphics[height=.9\textheight]{Illustrations/gp_1.PDF}}
+	\only<2>{\includegraphics[height=.9\textheight]{Illustrations/gp_2.PDF}}
+	\only<3>{\includegraphics[height=.8\textheight]{Illustrations/gpknapsack_1.PDF}}
+	\linespace
+	\only<3>{\tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+	\only<4>{\includegraphics[height=.75\textheight]{Illustrations/gpknapsack_2.PDF}}
+	\linespace
+	\only<4>{\tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+	\only<5>{\includegraphics[height=.9\textheight]{Illustrations/gp_3.PDF}}
+	\only<6>{\includegraphics[height=.9\textheight]{Illustrations/gp_4.PDF}}
+	\only<7>{\includegraphics[height=.9\textheight]{Illustrations/gp_5.PDF}}
 \end{frame}
 
 \section[Hyper-heuristics]{Hyper-heuristics}
@@ -255,12 +249,16 @@
 
 \begin{frame}
 	\frametitle{Heuristics}
-	\includegraphics[height=.9\textheight]{Illustrations/heuristic_1.PDF}
+	\includegraphics[height=.8\textheight]{Illustrations/heuristic_1.PDF}
+	\\
+	\only{\tiny{Based on figures from Tauritz et al. (see paper for reference)}}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Hyper-heuristics}
-	\includegraphics[height=.9\textheight]{Illustrations/heuristic_2.PDF}
+	\includegraphics[height=.8\textheight]{Illustrations/heuristic_2.PDF}
+	\\
+	\only{\tiny{Based on figures from Tauritz et al. (see paper for reference)}}
 \end{frame}
 
 \begin{frame}
@@ -332,245 +330,21 @@
 			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
 		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_1.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_2.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3_5.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3_6.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3_7.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3_8.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_3_9.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_4.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_5.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_6.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_7.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_8.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_9.PDF}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Stack-based genetic programming}
-	\begin{columns}
-		\begin{column}{0.65\textwidth}
-			Data-stacks are used for managing input and output of operations.
-			\linespace
-			\linespace
-			\linespace
-			Programs are represented as linear sequences of literals and instructions. Below is an example of a simple Push program:
-			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
-		\end{column}
-		\begin{column}{0.35\textwidth}
-			\includegraphics[height=.7\textheight]{Illustrations/stack_10.PDF}
+			\only<1>{\includegraphics[height=.7\textheight]{Illustrations/stack_1.PDF}}
+			\only<2>{\includegraphics[height=.7\textheight]{Illustrations/stack_2.PDF}}
+			\only<3>{\includegraphics[height=.7\textheight]{Illustrations/stack_3.PDF}}
+			\only<4>{\includegraphics[height=.7\textheight]{Illustrations/stack_3_5.PDF}}
+			\only<5>{\includegraphics[height=.7\textheight]{Illustrations/stack_3_6.PDF}}
+			\only<6>{\includegraphics[height=.7\textheight]{Illustrations/stack_3_7.PDF}}
+			\only<7>{\includegraphics[height=.7\textheight]{Illustrations/stack_3_8.PDF}}
+			\only<8>{\includegraphics[height=.7\textheight]{Illustrations/stack_3_9.PDF}}
+			\only<9>{\includegraphics[height=.7\textheight]{Illustrations/stack_4.PDF}}
+			\only<10>{\includegraphics[height=.7\textheight]{Illustrations/stack_5.PDF}}
+			\only<11>{\includegraphics[height=.7\textheight]{Illustrations/stack_6.PDF}}
+			\only<12>{\includegraphics[height=.7\textheight]{Illustrations/stack_7.PDF}}
+			\only<13>{\includegraphics[height=.7\textheight]{Illustrations/stack_8.PDF}}
+			\only<14>{\includegraphics[height=.7\textheight]{Illustrations/stack_9.PDF}}
+			\only<15>{\includegraphics[height=.7\textheight]{Illustrations/stack_10.PDF}}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -588,7 +362,7 @@
 		\item In most GPHH, the individual programs are evolving, but everything else is specified by the engineer; in autoconstruction, evolution is evolving as well.
 		\linespace
 		\pause
-		\item Programs are responsible for evolving solutions \textit{and} responsible for evolving their offspring.
+		\item Programs are responsible for evolving solutions \textit{and} responsible for constructing their offspring.
 	\end{itemize}
 \end{frame}
 
@@ -609,86 +383,32 @@
 
 \begin{frame}
 	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_1.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_2.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_3.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_4.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_5.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_6.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_7.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_8.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_9.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_10.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_11.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_12.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_13.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_14.PDF}
-\end{frame}
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_15.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_16.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~reproduction}
-	\includegraphics[width=.9\textwidth]{Illustrations/autodog_17.PDF}
+	\only<1>{
+	\includegraphics[width=.9\textwidth]{Illustrations/autodog_1.PDF}}
+	\only<2>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_2.PDF}}
+	\only<3>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_3.PDF}}
+	\only<4>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_4.PDF}}
+	\only<5>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_5.PDF}}
+	\only<6>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_6.PDF}}
+	\only<7>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_7.PDF}}
+	\only<8>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_8.PDF}}
+	\only<9>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_9.PDF}}
+	\only<10>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_10.PDF}}
+	\only<11>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_11.PDF}}
+	\only<12>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_12.PDF}}
+	\only<13>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_13.PDF}}
+	\only<14>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_14.PDF}}
+	\only<15>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_15.PDF}}
+	\only<16>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_16.PDF}}
+	\only<17>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_17.PDF}}
+	\only<18>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_18.PDF}}
+	\only<19>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_19.PDF}}
+	\only<20>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_20.PDF}}
+	\only<21>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_21.PDF}}
+	\only<22>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_22.PDF}}
+	\only<23>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_23.PDF}}
+	\only<24>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_24.PDF}}
+	\only<25>{\includegraphics[width=.9\textwidth]{Illustrations/autodog_25.PDF}}
 \end{frame}
 
 \begin{frame}
@@ -702,52 +422,16 @@
 
 \begin{frame}
 	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_1.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_2.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_3.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_4.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_5.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_6.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_7.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_8.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_9.PDF}
-\end{frame}
-
-\begin{frame}
-	\frametitle{AutoDoG~--~diversification test}
-	\includegraphics[width=.9\textwidth]{Illustrations/test_10.PDF}
+	\only<1>{\includegraphics[width=.9\textwidth]{Illustrations/test_1.PDF}}
+	\only<2>{\includegraphics[width=.9\textwidth]{Illustrations/test_2.PDF}}
+	\only<3>{\includegraphics[width=.9\textwidth]{Illustrations/test_3.PDF}}
+	\only<4>{\includegraphics[width=.9\textwidth]{Illustrations/test_4.PDF}}
+	\only<5>{\includegraphics[width=.9\textwidth]{Illustrations/test_5.PDF}}
+	\only<6>{\includegraphics[width=.9\textwidth]{Illustrations/test_6.PDF}}
+	\only<7>{\includegraphics[width=.9\textwidth]{Illustrations/test_7.PDF}}
+	\only<8>{\includegraphics[width=.9\textwidth]{Illustrations/test_8.PDF}}
+	\only<9>{\includegraphics[width=.9\textwidth]{Illustrations/test_9.PDF}}
+	\only<10>{\includegraphics[width=.9\textwidth]{Illustrations/test_10.PDF}}
 \end{frame}
 
 \subsection{Results of AutoDoG}
@@ -815,8 +499,17 @@
 	\large This may drastically change the way we program in the future!
 \end{frame}
 
+\begin{frame}
+	\frametitle{Acknowledgments}
+	\centering
+	Special thanks to Nic McPhee and Elena Machkasova for their feedback and constructive comments.
+	\linespace
+	\linespace
+	\large Thanks for coming!
+\end{frame}
+
 \begin{frame} 
-	\frametitle{References} 
+	\frametitle{References}
 	
 	\begin{thebibliography}{lskdjf}
 		
@@ -835,15 +528,10 @@
 	\begin{center}
 		See my paper for additional references.
 	\end{center}
-\end{frame} 
+\end{frame}
 
 \begin{frame}
-	\frametitle{Acknowledgments}
-	\centering
-	Special thanks to Nic McPhee and Elena Machkasova for their feedback and constructive comments.
-	\linespace
-	\linespace
-	\large Thanks for coming!
+	\includegraphics[width=1\textwidth]{Illustrations/questions.PDF}
 \end{frame}
 
 \end{document}
