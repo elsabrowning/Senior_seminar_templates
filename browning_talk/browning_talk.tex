@@ -5,6 +5,7 @@
   \usetheme{Frankfurt}
   \usecolortheme{seahorse}
   \setbeamercovered{invisible}
+  \setbeamertemplate{navigation symbols}{}%remove navigation symbols
   \usefonttheme{structurebold}
 }
 
@@ -125,6 +126,13 @@
 \end{frame}
 
 \begin{frame}
+	\centering
+	\includegraphics[width=.8\textwidth]{Illustrations/gpknapsack_1.PDF}
+	\linespace
+	\tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png}}
+\end{frame}
+
+\begin{frame}
 	\frametitle{Evolutionary Computation~--~Terminology}
 	\begin{columns}
 		\begin{column}{0.7\textwidth}
@@ -210,14 +218,13 @@
 
 \begin{frame}
 	\frametitle{Genetic Programming}
+	\centering
 	\only<1>{\includegraphics[height=.9\textheight]{Illustrations/gp_1.PDF}}
 	\only<2>{\includegraphics[height=.9\textheight]{Illustrations/gp_2.PDF}}
-	\only<3>{\includegraphics[height=.8\textheight]{Illustrations/gpknapsack_1.PDF}}
-	\linespace
-	\only<3>{\tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
-	\only<4>{\includegraphics[height=.75\textheight]{Illustrations/gpknapsack_2.PDF}}
-	\linespace
-	\only<4>{\tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+	\only<3>{\includegraphics[width=.8\textwidth]{Illustrations/gpknapsack_1.PDF}}
+	\only<3>{\linespace \tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
+	\only<4>{\includegraphics[width=.8\textwidth]{Illustrations/gpknapsack_2.PDF}}
+	\only<4>{\linespace \tiny{Based on \url{https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Knapsack.svg/1200px-Knapsack.svg.png} }}
 	\only<5>{\includegraphics[height=.9\textheight]{Illustrations/gp_3.PDF}}
 	\only<6>{\includegraphics[height=.9\textheight]{Illustrations/gp_4.PDF}}
 	\only<7>{\includegraphics[height=.9\textheight]{Illustrations/gp_5.PDF}}
@@ -248,17 +255,19 @@
 \subsection{Hyper-heuristics}
 
 \begin{frame}
+	\centering
 	\frametitle{Heuristics}
 	\includegraphics[height=.8\textheight]{Illustrations/heuristic_1.PDF}
 	\\
-	\only{\tiny{Based on figures from Tauritz et al. (see paper for reference)}}
+	\only{\tiny{Based on figures from Tauritz et al.~\cite{tauritz:2016}}}
 \end{frame}
 
 \begin{frame}
+	\centering
 	\frametitle{Hyper-heuristics}
 	\includegraphics[height=.8\textheight]{Illustrations/heuristic_2.PDF}
 	\\
-	\only{\tiny{Based on figures from Tauritz et al. (see paper for reference)}}
+	\only{\tiny{Based on figures from Tauritz et al.~\cite{tauritz:2016}}}
 \end{frame}
 
 \begin{frame}
@@ -301,6 +310,7 @@
 \end{frame}
 
 \subsection{Stack-based genetic programming}
+
 \begin{frame}
 	\frametitle{Stack-based genetic programming}
 	\begin{columns}
@@ -313,6 +323,7 @@
 			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
 	\begin{column}{0.35\textwidth}
+		\centering
 		\pause[0] \includegraphics[height=.7\textheight]{Illustrations/empty_stacks.PDF}
 	\end{column}
 	\end{columns}
@@ -330,6 +341,7 @@
 			\[\texttt{(1 integer\_add 2 integer\_equal)}\]
 		\end{column}
 		\begin{column}{0.35\textwidth}
+			\centering
 			\only<1>{\includegraphics[height=.7\textheight]{Illustrations/stack_1.PDF}}
 			\only<2>{\includegraphics[height=.7\textheight]{Illustrations/stack_2.PDF}}
 			\only<3>{\includegraphics[height=.7\textheight]{Illustrations/stack_3.PDF}}
@@ -508,6 +520,10 @@
 	\large Thanks for coming!
 \end{frame}
 
+\begin{frame}
+	\includegraphics[width=1\textwidth]{Illustrations/questions.PDF}
+\end{frame}
+
 \begin{frame} 
 	\frametitle{References}
 	
@@ -523,15 +539,15 @@
 		\newblock Evolution Evolves with Autoconstruction.
 		\newblock In T.~Friedrich, \emph{et al}, editors, {\em GECCO '16}, pages 1349--1356, Denver, Colorado, USA 2016.
 		
+		\bibitem{tauritz:2016}
+		D.~R.~Tauritz, and J.~Woodward.
+		\newblock Hyper-heuristics.
+		\newblock In T.~Friedrich, \emph{et al}, editors, {\em GECCO '16}, pages 273--304, Denver, Colorado, USA 2016.
+		
 	\end{thebibliography}
-	\linespace
 	\begin{center}
 		See my paper for additional references.
 	\end{center}
-\end{frame}
-
-\begin{frame}
-	\includegraphics[width=1\textwidth]{Illustrations/questions.PDF}
 \end{frame}
 
 \end{document}
